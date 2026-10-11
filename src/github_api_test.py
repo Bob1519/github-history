@@ -14,5 +14,5 @@ extractor = GitHubAPI(owner="tqdm", repo="tqdm", github_api_key=GITHUB_API_TOKEN
 
 output = extractor.get_all_processed_commits()
 
-with open("test.json", "w", encoding="utf-8") as f:
+with open("github_response.json", "w", encoding="utf-8") as f:
     json.dump(output,f, indent = 2)
