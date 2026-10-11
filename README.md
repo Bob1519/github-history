@@ -28,7 +28,6 @@ Activate the environment according to your operating system:
   ```powershell
   .venv\Scripts\Activate.ps1
   ```
----
 ### 3. Install Dependencies
 
 Use pip to install all required packages:
@@ -36,7 +35,6 @@ Use pip to install all required packages:
 ```bash
 pip install -r requirements.txt
 ```
----
 ### 4. Configure Environment Variables
 
 Create a local `.env` configuration file from the template:
@@ -57,8 +55,6 @@ Open `.env` in an editor and enter your credentials:
 GITHUB_API_KEY=your_github_personal_access_token_here
 OPENAI_API_KEY=your_openai_api_key_here
 ```
-
----
 ### 5. Running the Scripts
 
 Execute the pipeline components from the activated virtual environment:
