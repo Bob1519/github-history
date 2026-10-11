@@ -2,6 +2,7 @@ from github_api.github_api import GitHubAPI
 import os
 import json
 from dotenv import load_dotenv
+from pathlib import Path
 
 load_dotenv()
 
@@ -14,5 +15,6 @@ extractor = GitHubAPI(owner="tqdm", repo="tqdm", github_api_key=GITHUB_API_TOKEN
 
 output = extractor.get_all_processed_commits()
 
-with open("github_response.json", "w", encoding="utf-8") as f:
+file_location = Path("checkpoint_factual/checkpoint_2/github_response.json")
+with open(file_location, "w", encoding="utf-8") as f:
     json.dump(output,f, indent = 2)
