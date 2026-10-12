@@ -65,6 +65,9 @@ python ./src/github_api_test.py
 
 # Test LLM client
 python ./src/llm_client_test.py
+
+#Test the FAISS database
+python ./src/faiss_init_test.py
 ```
 
 
