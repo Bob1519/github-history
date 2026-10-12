@@ -1,0 +1,105 @@
+{
+  "faiss_version": "1.15.1",
+  "index_type": "IndexFlatIP",
+  "dim": 64,
+  "n_vectors": 24,
+  "words": [
+    "apple",
+    "apples",
+    "banana",
+    "orange",
+    "grape",
+    "lemon",
+    "river",
+    "rivet",
+    "rover",
+    "mountain",
+    "ocean",
+    "forest",
+    "commit",
+    "committee",
+    "merge",
+    "branch",
+    "branching",
+    "release",
+    "python",
+    "pythons",
+    "pylon",
+    "tqdm",
+    "progress",
+    "process"
+  ],
+  "searches": {
+    "apple": [
+      {
+        "word": "apple",
+        "score": 1.0
+      },
+      {
+        "word": "apples",
+        "score": 0.7303
+      },
+      {
+        "word": "branch",
+        "score": 0.1826
+      }
+    ],
+    "commits": [
+      {
+        "word": "commit",
+        "score": 0.7715
+      },
+      {
+        "word": "committee",
+        "score": 0.6299
+      },
+      {
+        "word": "rover",
+        "score": 0.3381
+      }
+    ],
+    "branches": [
+      {
+        "word": "branch",
+        "score": 0.6455
+      },
+      {
+        "word": "branching",
+        "score": 0.527
+      },
+      {
+        "word": "apples",
+        "score": 0.3873
+      }
+    ],
+    "rive": [
+      {
+        "word": "rivet",
+        "score": 0.7559
+      },
+      {
+        "word": "river",
+        "score": 0.6708
+      },
+      {
+        "word": "orange",
+        "score": 0.4082
+      }
+    ],
+    "pythonic": [
+      {
+        "word": "python",
+        "score": 0.7217
+      },
+      {
+        "word": "pythons",
+        "score": 0.6682
+      },
+      {
+        "word": "ocean",
+        "score": 0.3162
+      }
+    ]
+  },
+  "reload_matches": true
+}

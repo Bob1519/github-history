@@ -80,3 +80,11 @@ Created github_api which contains function to request sha and commit information
 Created llm_client which initializes the openAI client and allows for basic prompting
 
 Things to test/change: The Embedding limits the amount of code from each file allowed into the summary and how many diff files are allowed in. For certain files, this cuts off information. May want to test how much of the file we allow into the embedding summary
+
+FAISS initialization (added to Checkpoint 2 work):
+
+`src/faiss_init_test.py` creates a FAISS index (`IndexFlatIP`), adds a small set of words as vectors, searches it, then saves the index to disk and reloads it to confirm identical results. No API key is needed. Run `python ./src/faiss_init_test.py`; output is in `checkpoint_factual/checkpoint_2/` (`faiss_init_results.json`, `words.faiss`). The word vectors are a placeholder (hashed character trigrams), not a semantic model.
+
+Groundwork for the embedding checkpoint (not yet part of the pipeline):
+
+`src/vector_store/faiss_index.py` (`CommitVectorStore`) and `LLMClient.embed()` embed commit text, build/save/load a FAISS index and return top-k search results; `src/faiss_test.py` runs and benchmarks it (needs `OPENAI_API_KEY`, or `--offline` for a low-quality local embedder). Commit chunking is not implemented yet; the store currently embeds one vector per commit.
