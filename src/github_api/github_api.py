@@ -130,7 +130,8 @@ class GitHubAPI():
                 return json.load(f)
         
         files_meta_data = []
-        diff_snippets = []
+        embedding_diff_snippets = []
+        full_diffs = []
         files = commit_data.get("files", [])
         
         for f in files:
@@ -144,25 +145,42 @@ class GitHubAPI():
             
             patch = f.get("patch", "")
             if patch:
-                cleaned_patch = self._sanitize_diff_lines(patch, 15)
-                if cleaned_patch and len(diff_snippets) < 5:
-                    diff_snippets.append(
-                        f"--- {filename} ---\n" + "\n".join(cleaned_patch)
+                small_patch = self._sanitize_diff_lines(patch, 15)
+                if small_patch and len(embedding_diff_snippets) < 5:
+                    embedding_diff_snippets.append(
+                        f"--- {filename} ---\n" + "\n".join(small_patch)
                     )
+                full_patch = self._sanitize_diff_lines(patch, 1000)
+                if full_patch:
+                    full_diffs.append(
+                        f"--- {filename} ---\n" + "\n".join(full_patch)
+                    )
+                
 
-        files_summary = ", ".join(files_meta_data[:8])
+        embedding_files_summary = ", ".join(files_meta_data[:8])
+        full_files_summary = ", ".join(files_meta_data)
         if len(files_meta_data) > 8:
-            files_summary += f", ... (+{len(files_meta_data) - 8} more)"
+            embedding_files_summary += f", ... (+{len(files_meta_data) - 8} more)"
             
-        raw_diff_summary = "\n\n".join(diff_snippets)
+        full_diff_summary = "\n\n".join(full_diffs)
+        embedding_diff_summary = "\n\n".join(embedding_diff_snippets)
         
         embedding_summary = (
             f"Commit: {sha}\n"
             f"Author: {author}\n"
             f"Date: {date}\n"
             f"Message: {message}\n"
-            f"Affected Files: {files_summary}\n"
-            f"Summary Diff:\n{raw_diff_summary}"
+            f"Affected Files: {embedding_files_summary}\n"
+            f"Summary Diff:\n{embedding_diff_summary}"
+        )
+        
+        llm_summary = (
+            f"Commit: {sha}\n"
+            f"Author: {author}\n"
+            f"Date: {date}\n"
+            f"Message: {message}\n"
+            f"Affected Files: {full_files_summary}\n"
+            f"Summary Diff: {full_diff_summary}\n"
         )
         
         parsed_commit = {
@@ -171,7 +189,9 @@ class GitHubAPI():
             "author": author,
             "message": message,
             "files": [f.get("filename") for f in files],
+            "llm_summary": llm_summary,
             "embedding_text": embedding_summary
+
         }
         
         if use_cache:
@@ -210,6 +230,14 @@ class GitHubAPI():
                 json.dump(parsed_commits, f, indent=2)
         
         return parsed_commits
+    
+    def get_chunks(self, parsed_commits: Dict) -> list[str]:
+        chunks = []
+        for commit in parsed_commits:
+            chunks.append(commit["embedding_text"])
+        
+        return chunks
+        
     
 if __name__ == "__main__":
     load_dotenv()
