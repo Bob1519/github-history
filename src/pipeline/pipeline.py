@@ -8,10 +8,16 @@ from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 
 class Pipeline:
-    def __init__(self, github_api: GitHubAPI, vector_store: CommitVectorStore, llm_client: LLMClient):
-        self.github = github_api
-        self.vector_store = vector_store
-        self.llm = llm_client
+    def __init__(self, owner: str, repo: str, github_api_key: str, llm_key: str):
+        model = SentenceTransformer("BAAI/bge-m3", local_files_only=True)
+        def embed_fn(texts: list[str]) -> list[list[float]]:
+            return model.encode(texts).tolist()
+        
+        self.github = GitHubAPI(owner=owner, repo=repo, github_api_key=github_api_key)
+        
+        self.vector_store = CommitVectorStore(embed_fn, name=repo, index_type="flat")
+        
+        self.llm = LLMClient(llm_key)
         self.commits = None
         self.context = ""
     
