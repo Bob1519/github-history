@@ -29,4 +29,4 @@ class LLMClient():
             temperature=TEMPERATURE
         )
         
-        return res, res.choices[0].message.content
+        return res.choices[0].message.content

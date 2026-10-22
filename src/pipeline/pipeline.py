@@ -1,10 +1,6 @@
 from llm_api.llm_client import LLMClient
-from vector_store.faiss_index import CommitVectorStore, INDEX_TYPES, _normalize
+from vector_store.faiss_index import CommitVectorStore
 from github_api.github_api import GitHubAPI
-import faiss
-import numpy as np
-import os
-from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 
 class Pipeline:
@@ -37,7 +33,7 @@ class Pipeline:
     def run(self):
         self.search = self.vector_store.search("Major Architectural features refactors milestones releases")
         self.generate_context()
-        _, response = self.llm.generate_content(self.context)
+        response = self.llm.generate_content(self.context)
         with open("response.md", "w", encoding="utf-8") as f:
             f.write(response)
     
