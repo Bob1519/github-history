@@ -2,6 +2,7 @@ from llm_api.llm_client import LLMClient
 from vector_store.faiss_index import CommitVectorStore
 from github_api.github_api import GitHubAPI
 from sentence_transformers import SentenceTransformer
+from pathlib import Path
 
 class Pipeline:
     def __init__(self, owner: str, repo: str, github_api_key: str, llm_key: str):
@@ -30,12 +31,14 @@ class Pipeline:
         
         self.vector_store.build(self.commits, use_cache=True, save=True)
     
-    def run(self):
+    def generate_summary(self) -> str:
         self.search = self.vector_store.search("Major Architectural features refactors milestones releases")
         self.generate_context()
         response = self.llm.generate_content(self.context)
-        with open("response.md", "w", encoding="utf-8") as f:
+        with open(Path("src/llm_api/response.md"), "w", encoding="utf-8") as f:
             f.write(response)
+        
+        return response
     
     def generate_context(self):
         self.context = f"Repo: {self.github.repo} \nOwner: {self.github.owner}\n"
