@@ -17,7 +17,7 @@ from pathlib import Path
 load_dotenv()
 
 GROUND_TRUTH_PATH = Path("tests/test_ground_truth/tqdm_200_314_ground_truth.md")
-SAVE_PATH = Path("tests/test_output/tqdm_200_314_results.md")
+SAVE_PATH = Path("tests/test_output/tqdm_200_314_results.json")
 
 GITHUB_API_TOKEN = os.getenv("GITHUB_API_KEY")
 
