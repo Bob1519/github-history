@@ -28,6 +28,6 @@ pipeline.set_vector_store_commit("4d7aac956b414dd396ac807a8b19f30be15711ee", "d6
 response = pipeline.generate_summary()
 
 evaluator = Evaluator(LLM_API_KEY, SAVE_PATH, GROUND_TRUTH_PATH)
-# with open("src/llm_api/response.md", "r", encoding="utf-8") as f:
-#     response = f.read()
+with open("src/llm_api/response.md", "r", encoding="utf-8") as f:
+    response = f.read()
 evaluator.evaluate(response)
