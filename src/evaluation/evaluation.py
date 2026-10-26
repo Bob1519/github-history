@@ -1,5 +1,6 @@
 from llm_api.llm_client import LLMClient
 from pathlib import Path
+import json
 
 
 class Evaluator():
@@ -15,4 +16,4 @@ class Evaluator():
         
         evaluation = self.llm.generate_content(context)
         with open(self.save_location, "w", encoding="utf-8") as f:
-            f.write(evaluation)
+            json.dump(evaluation, f, indent=2)

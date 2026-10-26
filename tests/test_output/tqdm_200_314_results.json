@@ -17,8 +17,8 @@
     },
     {
       "milestone": "Added smoothing and maxinterval features for smooth progress bar and rate for unconstant, variable changes in update times",
-      "status": "partially_covered",
-      "matching_narrative_excerpt": "This included detailed descriptions of parameters such as `iterable`, `desc`, `total`, and new options like `smoothing`, which was introduced to provide users with better control over the progress bar's behavior."
+      "status": "covered",
+      "matching_narrative_excerpt": "the documentation was expanded to include details about a new parameter, `smoothing`, which allows users to control the exponential moving average smoothing factor for speed estimates"
     },
     {
       "milestone": "abstracted gui to its own class and file",
@@ -26,69 +26,79 @@
       "matching_narrative_excerpt": null
     },
     {
-      "milestone": "added a performance test to prevent performance regressions",
+      "milestone": "Added a performance test to prevent performance regressions",
       "status": "missed",
       "matching_narrative_excerpt": null
     },
     {
       "milestone": "Added the dynamic management of the bar on window resize",
       "status": "covered",
-      "matching_narrative_excerpt": "The introduction of `dynamic_ncols` marked a pivotal moment in the architectural evolution of `tqdm`. This feature required changes in multiple files, including `tqdm/_tqdm.py` and `tqdm/_utils.py`."
+      "matching_narrative_excerpt": "A pivotal architectural enhancement was introduced with the addition of the `dynamic_ncols` parameter, which allows the progress bar to adapt its width dynamically based on the terminal size"
     },
     {
       "milestone": "better internal testing/build workflow using python setup.py make [alias]",
       "status": "covered",
-      "matching_narrative_excerpt": "The commit `bee450d` on October 13, 2015, introduced a cleaner build process in the `Makefile`, consolidating various commands and making it easier for developers to manage the project."
+      "matching_narrative_excerpt": "the commit `bee450d951333c56194e0ed876f4d7c0a4403ff0` on October 13, 2015, introduced new commands into the `Makefile`, streamlining the testing process"
     }
   ],
   "narrative_precision_audit": [
     {
-      "narrative_claim": "improve documentation",
+      "narrative_claim": "enhancing usability, improving documentation, and refining the underlying architecture to support new features",
+      "matches_ground_truth": true,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "extensive modifications to `README.rst`, adding clarity to the parameters of the `tqdm` progress bar",
+      "matches_ground_truth": true,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "improved user understanding but also set the stage for more sophisticated usage scenarios",
       "matches_ground_truth": false,
       "matched_milestone": "none - noise/unverified"
     },
     {
-      "narrative_claim": "extensive modifications to `README.rst`",
-      "matches_ground_truth": false,
-      "matched_milestone": "none - noise/unverified"
-    },
-    {
-      "narrative_claim": "added clarity to the parameters of the `tqdm` class",
-      "matches_ground_truth": false,
-      "matched_milestone": "none - noise/unverified"
-    },
-    {
-      "narrative_claim": "dynamic_ncols parameter",
+      "narrative_claim": "dynamic_ncols parameter, which allows the progress bar to adapt its width dynamically based on the terminal size",
       "matches_ground_truth": true,
       "matched_milestone": "Added the dynamic management of the bar on window resize"
     },
     {
-      "narrative_claim": "integration of testing into the development process",
-      "matches_ground_truth": false,
+      "narrative_claim": "streamlining the testing process",
+      "matches_ground_truth": true,
+      "matched_milestone": "better internal testing/build workflow using python setup.py make [alias]"
+    },
+    {
+      "narrative_claim": "added to run all tests, which included coverage checks and linting",
+      "matches_ground_truth": true,
       "matched_milestone": "none - noise/unverified"
     },
     {
-      "narrative_claim": "new tests were added to validate the behavior of the progress bar",
-      "matches_ground_truth": false,
+      "narrative_claim": "focus on testing was further reflected in the commit where additional tests were added to `tqdm/tests/tests_tqdm.py`",
+      "matches_ground_truth": true,
       "matched_milestone": "none - noise/unverified"
     },
     {
-      "narrative_claim": "commands for running tests and checking code quality",
-      "matches_ground_truth": false,
+      "narrative_claim": "updated the version information in `tqdm/_version.py` to reflect the new features and improvements",
+      "matches_ground_truth": true,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "removed unnecessary files from the build artifacts, ensuring a leaner distribution package",
+      "matches_ground_truth": true,
       "matched_milestone": "none - noise/unverified"
     }
   ],
   "counts": {
-    "total_gt_milestones": 7,
-    "covered_milestones": 2,
-    "partially_covered_milestones": 1,
-    "missed_milestones": 4,
-    "total_narrative_claims": 7,
-    "matched_narrative_claims": 1
+    "total_gt_milestones": 8,
+    "covered_milestones": 3,
+    "partially_covered_milestones": 0,
+    "missed_milestones": 5,
+    "total_narrative_claims": 9,
+    "matched_narrative_claims": 5
   },
   "metrics": {
-    "end_to_end_recall": 0.214,
-    "end_to_end_precision": 0.143,
-    "pipeline_f1_score": 0.174
+    "end_to_end_recall": 0.375,
+    "end_to_end_precision": 0.556,
+    "pipeline_f1_score": 0.444
   }
 }
