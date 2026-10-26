@@ -8,32 +8,20 @@ A tool to analyze github repositories
 Initialize a virtual environment in the project root directory:
 
 ```bash
-# macOS / Linux
-python3 -m venv .venv
-
-# Windows
-python -m venv .venv
+conda create --file environment.yml  
 ```
 
 ### 2. Activate the Virtual Environment
 
 Activate the environment according to your operating system:
-
-* **macOS / Linux:**
   ```bash
-  source .venv/bin/activate
+  conda activate history_env
   ```
+### 3. Configure Packages
 
-* **Windows (PowerShell):**
-  ```powershell
-  .venv\Scripts\Activate.ps1
-  ```
-### 3. Install Dependencies
-
-Use pip to install all required packages:
-
+Use pip to configure the packages
 ```bash
-pip install -r requirements.txt
+pip install --no-build-isolation --no-deps -e .
 ```
 ### 4. Configure Environment Variables
 
@@ -68,6 +56,9 @@ python ./src/llm_client_test.py
 
 #Test the FAISS database
 python ./src/faiss_init_test.py
+
+#Test the tqdm pipeline result
+python tests/tqdm_200_314_test.py  
 ```
 
 
@@ -91,3 +82,5 @@ FAISS initialization (added to Checkpoint 2 work):
 Groundwork for the embedding checkpoint (not yet part of the pipeline):
 
 `src/vector_store/faiss_index.py` (`CommitVectorStore`) and `LLMClient.embed()` embed commit text, build/save/load a FAISS index and return top-k search results; `src/faiss_test.py` runs and benchmarks it (needs `OPENAI_API_KEY`, or `--offline` for a low-quality local embedder). Commit chunking is not implemented yet; the store currently embeds one vector per commit.
+
+Checkpoint 3: Created the main pipeline implementation.
