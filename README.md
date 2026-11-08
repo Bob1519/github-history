@@ -61,6 +61,20 @@ python ./src/faiss_init_test.py
 python tests/tqdm_200_314_test.py  
 ```
 
+### 6. Checkpoint 4 experiments (run from the repo root)
+
+```bash
+# 1) Chunking (per-commit vs per-file) x noise filter retrieval benchmark. No OpenAI cost, ~5-15 min on CPU.
+python tests/cp4_retrieval_benchmark.py
+
+# 2) End-to-end comparison of CP3 baseline vs CP4 retrieval and 3 prompts (gpt-4o-mini, a few cents).
+#    Automatically uses the chunking strategy that won step 1.
+python tests/cp4_prompt_comparison.py
+```
+
+Results are written to `tests/test_output/cp4/` (`retrieval_results.md`, `prompt_results.md`,
+`filter_dropped.json`, and each generated summary with its judge output).
+
 
 ## Checkpoints
 

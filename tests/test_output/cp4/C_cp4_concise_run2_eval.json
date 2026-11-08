@@ -1,0 +1,89 @@
+{
+  "ground_truth_recall_audit": [
+    {
+      "milestone": "smoothing and maxinterval features for smooth progress bar",
+      "status": "covered",
+      "matching_narrative_excerpt": "the introduction of the `maxinterval` parameter allows users to set a maximum update interval for the progress bar, improving control over update frequency"
+    },
+    {
+      "milestone": "abstracted gui to its own class and file",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "performance test to prevent performance regressions",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "dynamic management of the bar on window resize",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "better internal testing/build workflow using python setup.py make [alias]",
+      "status": "partially_covered",
+      "matching_narrative_excerpt": "the transition to using `tox` as the main unit testing tool, which facilitates testing across multiple Python environments"
+    }
+  ],
+  "narrative_precision_audit": [
+    {
+      "narrative_claim": "maxinterval parameter allows users to set a maximum update interval for the progress bar",
+      "matches_ground_truth": true,
+      "matched_milestone": "smoothing and maxinterval features for smooth progress bar"
+    },
+    {
+      "narrative_claim": "smoothing feature was enhanced with a new parameter, allowing for an exponential moving average of speed estimates",
+      "matches_ground_truth": true,
+      "matched_milestone": "smoothing and maxinterval features for smooth progress bar"
+    },
+    {
+      "narrative_claim": "transition to using tox as the main unit testing tool",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "addition of numerous unit tests, including tests for the new smoothing functionality and the maxinterval feature",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "bug fixes for handling virtual environments and streams that lack a flush attribute",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "minor bug fix for the ncols parameter in certain Windows environments",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "build process was streamlined by adding a test step before the build and upload process in the Makefile",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "documentation has also seen substantial updates",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "README was updated to reflect these changes",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    }
+  ],
+  "counts": {
+    "total_gt_milestones": 5,
+    "covered_milestones": 1,
+    "partially_covered_milestones": 1,
+    "missed_milestones": 3,
+    "total_narrative_claims": 9,
+    "matched_narrative_claims": 2
+  },
+  "metrics": {
+    "end_to_end_recall": 0.1,
+    "end_to_end_precision": 0.222,
+    "pipeline_f1_score": 0.154
+  }
+}

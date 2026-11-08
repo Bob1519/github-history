@@ -231,6 +231,37 @@ class GitHubAPI():
         
         return parsed_commits
     
+    def get_file_at_commit(self, path: str, ref: str, use_cache: bool = True):
+        """Return the text of `path` at commit `ref`, or None if it doesn't exist (CP4: README forcing)."""
+        cache_file = self.cache_dir / f"{self.repo}_file_{path.replace('/', '_')}_{ref}.json"
+        if use_cache and cache_file.exists():
+            with open(cache_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        else:
+            url = f"{self.base_url}/repos/{self.owner}/{self.repo}/contents/{path}"
+            res = requests.get(url, headers=self.headers, params={"ref": ref})
+            if res.status_code == 404:
+                return None
+            res.raise_for_status()
+            data = res.json()
+            if use_cache:
+                with open(cache_file, "w", encoding="utf-8") as f:
+                    json.dump(data, f)
+        if data.get("encoding") == "base64":
+            import base64
+            return base64.b64decode(data["content"]).decode("utf-8", errors="replace")
+        return data.get("content")
+
+    def get_readme_at_commit(self, ref: str, use_cache: bool = True):
+        names = ["README.md", "README.rst", "README.txt", "README"]
+        # try names that are already cached first, so a cached README never needs the network
+        names.sort(key=lambda p: not (self.cache_dir / f"{self.repo}_file_{p}_{ref}.json").exists())
+        for path in names:
+            text = self.get_file_at_commit(path, ref, use_cache=use_cache)
+            if text:
+                return path, text
+        return None, None
+
     def get_chunks(self, parsed_commits: Dict) -> list[str]:
         chunks = []
         for commit in parsed_commits:

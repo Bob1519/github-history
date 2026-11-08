@@ -1,0 +1,35 @@
+{
+  "_description": "Retrieval ground truth for tqdm v2.0.0 (4d7aac9) -> v3.1.4 (d6ad58f). Each milestone from the v2.2.4 and v3.1.4 release notes is mapped to the non-merge commits whose diffs implement it. Labels were assigned by searching the diffs for the symbols involved (git log -G <symbol>) and checking each commit's changed files. The v3.3.0 milestones in the original ground truth are excluded because those commits are outside this range.",
+  "milestones": [
+    {
+      "id": "dynamic_resize",
+      "query": "Added the dynamic management of the bar on window resize",
+      "relevant": ["1392025", "7be2fdc"]
+    },
+    {
+      "id": "setup_make",
+      "query": "better internal testing/build workflow using python setup.py make [alias]",
+      "relevant": ["7405a59", "487cc2f", "11ecc25", "8a70f97", "bee450d"]
+    },
+    {
+      "id": "smoothing",
+      "query": "Added smoothing feature for smooth progress bar and rate for variable changes in update times",
+      "relevant": ["370780a", "7946b6f", "116513f", "ac8c512", "bc91e09"]
+    },
+    {
+      "id": "maxinterval",
+      "query": "Added maxinterval feature for unconstant update times",
+      "relevant": ["613b5e1"]
+    },
+    {
+      "id": "gui_abstraction",
+      "query": "abstracted gui to its own class and file",
+      "relevant": ["a5130ec", "b1a780d", "13fa0fd", "1f4c1b6"]
+    },
+    {
+      "id": "perf_test",
+      "query": "Added a performance test to prevent performance regressions",
+      "relevant": ["c24d46f", "1921d87", "4bceb3f", "3af4c20"]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "ground_truth_recall_audit": [
+    {
+      "milestone": "smoothing and maxinterval features for smooth progress bar and rate for unconstant, variable changes in update times",
+      "status": "partially_covered",
+      "matching_narrative_excerpt": "The addition of a smoothing parameter in 370780a3 further refined the user experience by enabling users to control the rate of updates displayed by the progress bar. The introduction of the maxinterval parameter in 613b5e1 was another notable enhancement, allowing users to set a maximum update interval for the progress bar."
+    },
+    {
+      "milestone": "abstracted gui to its own class and file",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "added a performance test to prevent performance regressions",
+      "status": "covered",
+      "matching_narrative_excerpt": "as demonstrated in c24d46ff, where performance tests were added to measure the overhead of using tqdm compared to native Python iterations."
+    },
+    {
+      "milestone": "dynamic management of the bar on window resize",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "better internal testing/build workflow using python setup.py make [alias]",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    }
+  ],
+  "narrative_precision_audit": [
+    {
+      "narrative_claim": "significant strides were made in establishing a robust testing infrastructure",
+      "matches_ground_truth": true,
+      "matched_milestone": "added a performance test to prevent performance regressions"
+    },
+    {
+      "narrative_claim": "the introduction of more comprehensive tests included the implementation of an exponentially weighted moving average for speed estimates",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "the commit 1392025c marked a substantial update to the class's constructor, adding parameters like dynamic_ncols and gui",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "the addition of a smoothing parameter in 370780a3 further refined the user experience",
+      "matches_ground_truth": true,
+      "matched_milestone": "smoothing and maxinterval features for smooth progress bar and rate for unconstant, variable changes in update times"
+    },
+    {
+      "narrative_claim": "the introduction of the maxinterval parameter in 613b5e1 was another notable enhancement",
+      "matches_ground_truth": true,
+      "matched_milestone": "smoothing and maxinterval features for smooth progress bar and rate for unconstant, variable changes in update times"
+    },
+    {
+      "narrative_claim": "commits like 7decf040 and da91bb2 focused on minor bug fixes that improved compatibility with various environments",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "the commit 18c0111e significantly improved the clarity and comprehensiveness of the README",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    }
+  ],
+  "counts": {
+    "total_gt_milestones": 5,
+    "covered_milestones": 2,
+    "partially_covered_milestones": 1,
+    "missed_milestones": 2,
+    "total_narrative_claims": 7,
+    "matched_narrative_claims": 4
+  },
+  "metrics": {
+    "end_to_end_recall": 0.5,
+    "end_to_end_precision": 0.571,
+    "pipeline_f1_score": 0.533
+  }
+}

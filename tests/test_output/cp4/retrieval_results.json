@@ -1,0 +1,602 @@
+{
+  "embedder": "bge-m3",
+  "filter": {
+    "total_commits": 96,
+    "kept": 70,
+    "dropped": 26,
+    "relevant_commits_dropped": []
+  },
+  "part_a_milestone_retrieval": {
+    "per_commit": {
+      "summary": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "recall@1": 0.4,
+        "recall@3": 0.625,
+        "recall@5": 0.783,
+        "recall@10": 0.892,
+        "mrr": 1.0,
+        "num_chunks": 96
+      },
+      "per_milestone": {
+        "dynamic_resize": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.5,
+          "recall@3": 0.5,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "1392025",
+            "18c0111",
+            "55863dc",
+            "9153376",
+            "7be2fdc"
+          ]
+        },
+        "setup_make": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.2,
+          "recall@3": 0.4,
+          "recall@5": 0.6,
+          "recall@10": 0.8,
+          "rr": 1.0,
+          "top5": [
+            "7405a59",
+            "7decf04",
+            "487cc2f",
+            "8a11ecf",
+            "bee450d"
+          ]
+        },
+        "smoothing": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.2,
+          "recall@3": 0.6,
+          "recall@5": 0.6,
+          "recall@10": 0.8,
+          "rr": 1.0,
+          "top5": [
+            "ac8c512",
+            "370780a",
+            "7946b6f",
+            "18c0111",
+            "55863dc"
+          ]
+        },
+        "maxinterval": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "613b5e1",
+            "4320ffb",
+            "bb9bc48",
+            "df0e647",
+            "18c0111"
+          ]
+        },
+        "gui_abstraction": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.25,
+          "recall@3": 0.5,
+          "recall@5": 0.5,
+          "recall@10": 0.75,
+          "rr": 1.0,
+          "top5": [
+            "a5130ec",
+            "b1a780d",
+            "7decf04",
+            "5d7e8cc",
+            "bee450d"
+          ]
+        },
+        "perf_test": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.25,
+          "recall@3": 0.75,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "3af4c20",
+            "c24d46f",
+            "4bceb3f",
+            "1921d87",
+            "613b5e1"
+          ]
+        }
+      }
+    },
+    "per_commit+filter": {
+      "summary": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "recall@1": 0.4,
+        "recall@3": 0.708,
+        "recall@5": 0.817,
+        "recall@10": 0.967,
+        "mrr": 1.0,
+        "num_chunks": 70
+      },
+      "per_milestone": {
+        "dynamic_resize": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.5,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "1392025",
+            "18c0111",
+            "7be2fdc",
+            "0de9848",
+            "6c1932a"
+          ]
+        },
+        "setup_make": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.2,
+          "recall@3": 0.4,
+          "recall@5": 0.8,
+          "recall@10": 0.8,
+          "rr": 1.0,
+          "top5": [
+            "7405a59",
+            "7decf04",
+            "487cc2f",
+            "bee450d",
+            "11ecc25"
+          ]
+        },
+        "smoothing": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.2,
+          "recall@3": 0.6,
+          "recall@5": 0.6,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "ac8c512",
+            "370780a",
+            "7946b6f",
+            "18c0111",
+            "1392025"
+          ]
+        },
+        "maxinterval": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "613b5e1",
+            "4320ffb",
+            "bb9bc48",
+            "df0e647",
+            "18c0111"
+          ]
+        },
+        "gui_abstraction": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.25,
+          "recall@3": 0.5,
+          "recall@5": 0.5,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "a5130ec",
+            "b1a780d",
+            "7decf04",
+            "bee450d",
+            "24e90bf"
+          ]
+        },
+        "perf_test": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.25,
+          "recall@3": 0.75,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "3af4c20",
+            "c24d46f",
+            "4bceb3f",
+            "1921d87",
+            "613b5e1"
+          ]
+        }
+      }
+    },
+    "per_file": {
+      "summary": {
+        "hit@1": 0.833,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "recall@1": 0.367,
+        "recall@3": 0.558,
+        "recall@5": 0.675,
+        "recall@10": 0.858,
+        "mrr": 0.889,
+        "num_chunks": 203
+      },
+      "per_milestone": {
+        "dynamic_resize": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.5,
+          "recall@3": 0.5,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "1392025",
+            "55863dc",
+            "18c0111",
+            "7be2fdc",
+            "9153376"
+          ]
+        },
+        "setup_make": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.2,
+          "recall@3": 0.4,
+          "recall@5": 0.6,
+          "recall@10": 0.8,
+          "rr": 1.0,
+          "top5": [
+            "7405a59",
+            "7decf04",
+            "487cc2f",
+            "8a11ecf",
+            "11ecc25"
+          ]
+        },
+        "smoothing": {
+          "hit@1": 0,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.0,
+          "recall@3": 0.2,
+          "recall@5": 0.2,
+          "recall@10": 0.6,
+          "rr": 0.333,
+          "top5": [
+            "6fd1182",
+            "1392025",
+            "ac8c512",
+            "f792424",
+            "18c0111"
+          ]
+        },
+        "maxinterval": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "613b5e1",
+            "4320ffb",
+            "bb9bc48",
+            "1392025",
+            "55863dc"
+          ]
+        },
+        "gui_abstraction": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.25,
+          "recall@3": 0.5,
+          "recall@5": 0.5,
+          "recall@10": 0.75,
+          "rr": 1.0,
+          "top5": [
+            "a5130ec",
+            "b1a780d",
+            "5d7e8cc",
+            "74de61b",
+            "9153376"
+          ]
+        },
+        "perf_test": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.25,
+          "recall@3": 0.75,
+          "recall@5": 0.75,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "1921d87",
+            "3af4c20",
+            "4bceb3f",
+            "c663ee6",
+            "f27e315"
+          ]
+        }
+      }
+    },
+    "per_file+filter": {
+      "summary": {
+        "hit@1": 0.833,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "recall@1": 0.367,
+        "recall@3": 0.642,
+        "recall@5": 0.75,
+        "recall@10": 0.967,
+        "mrr": 0.917,
+        "num_chunks": 126
+      },
+      "per_milestone": {
+        "dynamic_resize": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.5,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "1392025",
+            "18c0111",
+            "7be2fdc",
+            "0de9848",
+            "9dd7199"
+          ]
+        },
+        "setup_make": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.2,
+          "recall@3": 0.4,
+          "recall@5": 0.6,
+          "recall@10": 0.8,
+          "rr": 1.0,
+          "top5": [
+            "7405a59",
+            "7decf04",
+            "487cc2f",
+            "11ecc25",
+            "1921d87"
+          ]
+        },
+        "smoothing": {
+          "hit@1": 0,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.0,
+          "recall@3": 0.2,
+          "recall@5": 0.4,
+          "recall@10": 1.0,
+          "rr": 0.5,
+          "top5": [
+            "1392025",
+            "ac8c512",
+            "18c0111",
+            "212f67b",
+            "7946b6f"
+          ]
+        },
+        "maxinterval": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "613b5e1",
+            "4320ffb",
+            "bb9bc48",
+            "1392025",
+            "212f67b"
+          ]
+        },
+        "gui_abstraction": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.25,
+          "recall@3": 0.5,
+          "recall@5": 0.75,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "a5130ec",
+            "b1a780d",
+            "7decf04",
+            "13fa0fd",
+            "487cc2f"
+          ]
+        },
+        "perf_test": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.25,
+          "recall@3": 0.75,
+          "recall@5": 0.75,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "1921d87",
+            "3af4c20",
+            "4bceb3f",
+            "c663ee6",
+            "ec3d315"
+          ]
+        }
+      }
+    }
+  },
+  "part_b_pipeline_coverage": {
+    "per_commit | cp3_single_query": {
+      "commits_in_context": 5,
+      "milestones_covered": 1,
+      "milestones_total": 6,
+      "covered_ids": [
+        "setup_make"
+      ],
+      "relevant_commits_in_context": 1,
+      "context_precision": 0.2
+    },
+    "per_commit | cp4_multi_query": {
+      "commits_in_context": 18,
+      "milestones_covered": 3,
+      "milestones_total": 6,
+      "covered_ids": [
+        "setup_make",
+        "smoothing",
+        "perf_test"
+      ],
+      "relevant_commits_in_context": 3,
+      "context_precision": 0.167
+    },
+    "per_commit+filter | cp3_single_query": {
+      "commits_in_context": 5,
+      "milestones_covered": 2,
+      "milestones_total": 6,
+      "covered_ids": [
+        "dynamic_resize",
+        "setup_make"
+      ],
+      "relevant_commits_in_context": 2,
+      "context_precision": 0.4
+    },
+    "per_commit+filter | cp4_multi_query": {
+      "commits_in_context": 18,
+      "milestones_covered": 5,
+      "milestones_total": 6,
+      "covered_ids": [
+        "dynamic_resize",
+        "setup_make",
+        "smoothing",
+        "maxinterval",
+        "perf_test"
+      ],
+      "relevant_commits_in_context": 7,
+      "context_precision": 0.389
+    },
+    "per_file | cp3_single_query": {
+      "commits_in_context": 5,
+      "milestones_covered": 1,
+      "milestones_total": 6,
+      "covered_ids": [
+        "dynamic_resize"
+      ],
+      "relevant_commits_in_context": 1,
+      "context_precision": 0.2
+    },
+    "per_file | cp4_multi_query": {
+      "commits_in_context": 22,
+      "milestones_covered": 4,
+      "milestones_total": 6,
+      "covered_ids": [
+        "dynamic_resize",
+        "setup_make",
+        "smoothing",
+        "perf_test"
+      ],
+      "relevant_commits_in_context": 5,
+      "context_precision": 0.227
+    },
+    "per_file+filter | cp3_single_query": {
+      "commits_in_context": 5,
+      "milestones_covered": 1,
+      "milestones_total": 6,
+      "covered_ids": [
+        "dynamic_resize"
+      ],
+      "relevant_commits_in_context": 1,
+      "context_precision": 0.2
+    },
+    "per_file+filter | cp4_multi_query": {
+      "commits_in_context": 17,
+      "milestones_covered": 4,
+      "milestones_total": 6,
+      "covered_ids": [
+        "dynamic_resize",
+        "setup_make",
+        "smoothing",
+        "perf_test"
+      ],
+      "relevant_commits_in_context": 5,
+      "context_precision": 0.294
+    }
+  }
+}

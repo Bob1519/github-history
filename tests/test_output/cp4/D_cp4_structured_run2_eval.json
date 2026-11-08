@@ -1,0 +1,144 @@
+{
+  "ground_truth_recall_audit": [
+    {
+      "milestone": "smoothing and maxinterval features for smooth progress bar and rate for unconstant, variable changes in update times",
+      "status": "covered",
+      "matching_narrative_excerpt": "Introduced smoothing parameter for exponential moving average of speed estimates - improves the accuracy of speed reporting (370780a). Added maxinterval argument to control the maximum progress update interval - allows for better control over update frequency in loops (613b5e1)."
+    },
+    {
+      "milestone": "abstracted gui to its own class and file",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "added a performance test to prevent performance regressions",
+      "status": "covered",
+      "matching_narrative_excerpt": "Established performance tests to measure overhead of tqdm against native loops - provides insights into the efficiency of the library (c24d46f)."
+    },
+    {
+      "milestone": "dynamic management of the bar on window resize",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "better internal testing/build workflow using python setup.py make [alias]",
+      "status": "partially_covered",
+      "matching_narrative_excerpt": "Updated Makefile to include commands for running tests and checking code quality - streamlines the development and testing process (bee450d)."
+    }
+  ],
+  "narrative_precision_audit": [
+    {
+      "narrative_claim": "Added maxinterval argument to control the maximum progress update interval",
+      "matches_ground_truth": true,
+      "matched_milestone": "smoothing and maxinterval features for smooth progress bar and rate for unconstant, variable changes in update times"
+    },
+    {
+      "narrative_claim": "Introduced smoothing parameter for exponential moving average of speed estimates",
+      "matches_ground_truth": true,
+      "matched_milestone": "smoothing and maxinterval features for smooth progress bar and rate for unconstant, variable changes in update times"
+    },
+    {
+      "narrative_claim": "Updated trange to use range in Python 3",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Enhanced documentation for parameters in tqdm class",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Added unit tests for new features and edge cases",
+      "matches_ground_truth": true,
+      "matched_milestone": "added a performance test to prevent performance regressions"
+    },
+    {
+      "narrative_claim": "Refactored Makefile to include cleaner build commands",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Consolidated test commands in Makefile for better organization",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Improved handling of virtual environments in tqdm",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Cleaned up the README and other documentation files",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Removed redundant test commands and streamlined testing process in Makefile",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Fixed minor bug in ncols handling for certain Windows environments",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Resolved issue with flush attribute in streams",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Corrected edge case bugs in smoothing rate calculations",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Adjusted performance test thresholds to accommodate various systems",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Fixed minor bugs related to the handling of dynamic miniters and maxinterval",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Integrated tox as the primary unit testing tool",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Added extensive unit tests for new features, including smoothing and maxinterval",
+      "matches_ground_truth": true,
+      "matched_milestone": "added a performance test to prevent performance regressions"
+    },
+    {
+      "narrative_claim": "Improved flake8 coverage for tests and added detailed error reporting for nosetests",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Established performance tests to measure overhead of tqdm against native loops",
+      "matches_ground_truth": true,
+      "matched_milestone": "added a performance test to prevent performance regressions"
+    },
+    {
+      "narrative_claim": "Updated Makefile to include commands for running tests and checking code quality",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    }
+  ],
+  "counts": {
+    "total_gt_milestones": 5,
+    "covered_milestones": 3,
+    "partially_covered_milestones": 1,
+    "missed_milestones": 1,
+    "total_narrative_claims": 20,
+    "matched_narrative_claims": 6
+  },
+  "metrics": {
+    "end_to_end_recall": 0.7,
+    "end_to_end_precision": 0.3,
+    "pipeline_f1_score": 0.4
+  }
+}

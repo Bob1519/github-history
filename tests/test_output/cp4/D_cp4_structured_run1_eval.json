@@ -1,0 +1,144 @@
+{
+  "ground_truth_recall_audit": [
+    {
+      "milestone": "smoothing and maxinterval features for smooth progress bar and rate for unconstant, variable changes in update times",
+      "status": "covered",
+      "matching_narrative_excerpt": "Added maxinterval argument to control the maximum progress update interval - enhances user control over progress bar updates"
+    },
+    {
+      "milestone": "abstracted gui to its own class and file",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "performance test to prevent performance regressions",
+      "status": "covered",
+      "matching_narrative_excerpt": "Introduced performance tests to measure overhead of tqdm against native range"
+    },
+    {
+      "milestone": "dynamic management of the bar on window resize",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "better internal testing/build workflow using python setup.py make [alias]",
+      "status": "partially_covered",
+      "matching_narrative_excerpt": "Enhanced Makefile to include test commands before build and upload processes"
+    }
+  ],
+  "narrative_precision_audit": [
+    {
+      "narrative_claim": "Added maxinterval argument to control the maximum progress update interval - enhances user control over progress bar updates",
+      "matches_ground_truth": true,
+      "matched_milestone": "smoothing and maxinterval features for smooth progress bar and rate for unconstant, variable changes in update times"
+    },
+    {
+      "narrative_claim": "Introduced smoothing parameter for exponential moving average of speed estimates - improves accuracy of speed reporting",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Updated trange function to use range in Python 3, maintaining backward compatibility with xrange in Python 2 - ensures consistent behavior across Python versions",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Enhanced documentation for parameters including smoothing and maxinterval - provides clearer guidance for users",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Added tests for new features like maxinterval and smoothing - ensures reliability and correctness of new functionalities",
+      "matches_ground_truth": true,
+      "matched_milestone": "performance test to prevent performance regressions"
+    },
+    {
+      "narrative_claim": "Refactored Makefile to streamline build and test commands - simplifies development workflow",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Consolidated test commands in Makefile to improve clarity and usability - enhances developer experience",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Updated setup.py for better compliance with flake8 standards - improves code quality and maintainability",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Removed redundant test commands and improved test setup process in Makefile - optimizes testing efficiency",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Cleaned up README and other documentation files for better clarity and consistency - enhances user understanding",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Fixed minor bug in handling flush attribute for streams in tqdm - improves compatibility with various stream types",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Corrected a bug related to ncols calculation in Windows environments - ensures consistent behavior across platforms",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Resolved edge case bugs in smoothing logic for progress updates - enhances accuracy of progress reporting",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Adjusted performance test thresholds to accommodate various systems - ensures robustness of performance tests",
+      "matches_ground_truth": true,
+      "matched_milestone": "performance test to prevent performance regressions"
+    },
+    {
+      "narrative_claim": "Fixed issues with dynamic miniters and maxinterval handling - improves responsiveness of the progress bar",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Made tox the main unit testing tool and added more tests in tox configuration - standardizes testing across environments",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Enhanced Makefile to include test commands before build and upload processes - ensures code quality before deployment",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Added detailed error reporting for nosetests and improved flake8 coverage for tests - increases reliability of testing outputs",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Introduced performance tests to measure overhead of tqdm against native range - provides insights into performance impact",
+      "matches_ground_truth": true,
+      "matched_milestone": "performance test to prevent performance regressions"
+    },
+    {
+      "narrative_claim": "Updated testing framework to support both ASCII and Unicode progress bars - enhances testing coverage for different output formats",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    }
+  ],
+  "counts": {
+    "total_gt_milestones": 5,
+    "covered_milestones": 3,
+    "partially_covered_milestones": 1,
+    "missed_milestones": 1,
+    "total_narrative_claims": 20,
+    "matched_narrative_claims": 5
+  },
+  "metrics": {
+    "end_to_end_recall": 0.7,
+    "end_to_end_precision": 0.25,
+    "pipeline_f1_score": 0.357
+  }
+}

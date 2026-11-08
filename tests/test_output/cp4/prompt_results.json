@@ -1,0 +1,366 @@
+{
+  "A_cp3_baseline": {
+    "config": {
+      "chunking": "per_commit",
+      "filter": false,
+      "force_include": false,
+      "num_queries": 1,
+      "k": 5,
+      "prompt": "src/llm_api/analyzer_prompt.md"
+    },
+    "mean_recall": 0.3,
+    "mean_precision": 0.167,
+    "mean_f1": 0.182,
+    "f1_runs": [
+      0.364,
+      0.0
+    ],
+    "mean_words": 512,
+    "commits_in_context": 5,
+    "judge_inconsistent_labels": 0,
+    "runs": [
+      {
+        "score": {
+          "total_gt_milestones": 5,
+          "covered": 2,
+          "partially_covered": 0,
+          "total_claims": 6,
+          "matched_claims": 2,
+          "inconsistent_judge_labels": 0,
+          "recall": 0.4,
+          "precision": 0.333,
+          "f1": 0.364,
+          "judge_reported_f1": 0.363
+        },
+        "words": 506,
+        "commits_in_context": 5,
+        "context_chars": 19794,
+        "retrieved": [
+          "bee450d",
+          "55863dc",
+          "9153376",
+          "e3ae449",
+          "18c0111"
+        ]
+      },
+      {
+        "score": {
+          "total_gt_milestones": 5,
+          "covered": 1,
+          "partially_covered": 0,
+          "total_claims": 6,
+          "matched_claims": 0,
+          "inconsistent_judge_labels": 0,
+          "recall": 0.2,
+          "precision": 0.0,
+          "f1": 0.0,
+          "judge_reported_f1": 0.0
+        },
+        "words": 518,
+        "commits_in_context": 5,
+        "context_chars": 19794,
+        "retrieved": [
+          "bee450d",
+          "55863dc",
+          "9153376",
+          "e3ae449",
+          "18c0111"
+        ]
+      }
+    ]
+  },
+  "B_cp4_retrieval": {
+    "config": {
+      "chunking": "per_commit",
+      "filter": true,
+      "force_include": true,
+      "num_queries": 5,
+      "k": 5,
+      "prompt": "src/llm_api/analyzer_prompt.md"
+    },
+    "mean_recall": 0.45,
+    "mean_precision": 0.615,
+    "mean_f1": 0.52,
+    "f1_runs": [
+      0.686,
+      0.353
+    ],
+    "mean_words": 606,
+    "commits_in_context": 19,
+    "judge_inconsistent_labels": 0,
+    "runs": [
+      {
+        "score": {
+          "total_gt_milestones": 5,
+          "covered": 3,
+          "partially_covered": 0,
+          "total_claims": 5,
+          "matched_claims": 4,
+          "inconsistent_judge_labels": 0,
+          "recall": 0.6,
+          "precision": 0.8,
+          "f1": 0.686,
+          "judge_reported_f1": 0.688
+        },
+        "words": 567,
+        "commits_in_context": 19,
+        "context_chars": 46403,
+        "retrieved": [
+          "4d7aac9",
+          "bee450d",
+          "088d4be",
+          "ec3d315",
+          "1392025",
+          "7decf04",
+          "7aeb45a",
+          "da91bb2",
+          "43f3c12",
+          "e3ae449",
+          "370780a",
+          "18c0111",
+          "ac8c512",
+          "c663ee6",
+          "c24d46f",
+          "2b39c90",
+          "3af4c20",
+          "613b5e1",
+          "d6ad58f"
+        ]
+      },
+      {
+        "score": {
+          "total_gt_milestones": 5,
+          "covered": 1,
+          "partially_covered": 1,
+          "total_claims": 7,
+          "matched_claims": 3,
+          "inconsistent_judge_labels": 0,
+          "recall": 0.3,
+          "precision": 0.429,
+          "f1": 0.353,
+          "judge_reported_f1": 0.533
+        },
+        "words": 645,
+        "commits_in_context": 19,
+        "context_chars": 46403,
+        "retrieved": [
+          "4d7aac9",
+          "bee450d",
+          "088d4be",
+          "ec3d315",
+          "1392025",
+          "7decf04",
+          "7aeb45a",
+          "da91bb2",
+          "43f3c12",
+          "e3ae449",
+          "370780a",
+          "18c0111",
+          "ac8c512",
+          "c663ee6",
+          "c24d46f",
+          "2b39c90",
+          "3af4c20",
+          "613b5e1",
+          "d6ad58f"
+        ]
+      }
+    ]
+  },
+  "C_cp4_concise": {
+    "config": {
+      "chunking": "per_commit",
+      "filter": true,
+      "force_include": true,
+      "num_queries": 5,
+      "k": 5,
+      "prompt": "src/llm_api/prompts/concise_prompt.md"
+    },
+    "mean_recall": 0.45,
+    "mean_precision": 0.278,
+    "mean_f1": 0.342,
+    "f1_runs": [
+      0.429,
+      0.255
+    ],
+    "mean_words": 248,
+    "commits_in_context": 19,
+    "judge_inconsistent_labels": 0,
+    "runs": [
+      {
+        "score": {
+          "total_gt_milestones": 5,
+          "covered": 3,
+          "partially_covered": 0,
+          "total_claims": 9,
+          "matched_claims": 3,
+          "inconsistent_judge_labels": 0,
+          "recall": 0.6,
+          "precision": 0.333,
+          "f1": 0.429,
+          "judge_reported_f1": 0.471
+        },
+        "words": 237,
+        "commits_in_context": 19,
+        "context_chars": 46403,
+        "retrieved": [
+          "4d7aac9",
+          "bee450d",
+          "088d4be",
+          "ec3d315",
+          "1392025",
+          "7decf04",
+          "7aeb45a",
+          "da91bb2",
+          "43f3c12",
+          "e3ae449",
+          "370780a",
+          "18c0111",
+          "ac8c512",
+          "c663ee6",
+          "c24d46f",
+          "2b39c90",
+          "3af4c20",
+          "613b5e1",
+          "d6ad58f"
+        ]
+      },
+      {
+        "score": {
+          "total_gt_milestones": 5,
+          "covered": 1,
+          "partially_covered": 1,
+          "total_claims": 9,
+          "matched_claims": 2,
+          "inconsistent_judge_labels": 0,
+          "recall": 0.3,
+          "precision": 0.222,
+          "f1": 0.255,
+          "judge_reported_f1": 0.154
+        },
+        "words": 258,
+        "commits_in_context": 19,
+        "context_chars": 46403,
+        "retrieved": [
+          "4d7aac9",
+          "bee450d",
+          "088d4be",
+          "ec3d315",
+          "1392025",
+          "7decf04",
+          "7aeb45a",
+          "da91bb2",
+          "43f3c12",
+          "e3ae449",
+          "370780a",
+          "18c0111",
+          "ac8c512",
+          "c663ee6",
+          "c24d46f",
+          "2b39c90",
+          "3af4c20",
+          "613b5e1",
+          "d6ad58f"
+        ]
+      }
+    ]
+  },
+  "D_cp4_structured": {
+    "config": {
+      "chunking": "per_commit",
+      "filter": true,
+      "force_include": true,
+      "num_queries": 5,
+      "k": 5,
+      "prompt": "src/llm_api/prompts/structured_prompt.md"
+    },
+    "mean_recall": 0.5,
+    "mean_precision": 0.225,
+    "mean_f1": 0.309,
+    "f1_runs": [
+      0.286,
+      0.333
+    ],
+    "mean_words": 442,
+    "commits_in_context": 19,
+    "judge_inconsistent_labels": 0,
+    "runs": [
+      {
+        "score": {
+          "total_gt_milestones": 5,
+          "covered": 2,
+          "partially_covered": 1,
+          "total_claims": 20,
+          "matched_claims": 4,
+          "inconsistent_judge_labels": 0,
+          "recall": 0.5,
+          "precision": 0.2,
+          "f1": 0.286,
+          "judge_reported_f1": 0.357
+        },
+        "words": 430,
+        "commits_in_context": 19,
+        "context_chars": 46403,
+        "retrieved": [
+          "4d7aac9",
+          "bee450d",
+          "088d4be",
+          "ec3d315",
+          "1392025",
+          "7decf04",
+          "7aeb45a",
+          "da91bb2",
+          "43f3c12",
+          "e3ae449",
+          "370780a",
+          "18c0111",
+          "ac8c512",
+          "c663ee6",
+          "c24d46f",
+          "2b39c90",
+          "3af4c20",
+          "613b5e1",
+          "d6ad58f"
+        ]
+      },
+      {
+        "score": {
+          "total_gt_milestones": 5,
+          "covered": 2,
+          "partially_covered": 1,
+          "total_claims": 20,
+          "matched_claims": 5,
+          "inconsistent_judge_labels": 0,
+          "recall": 0.5,
+          "precision": 0.25,
+          "f1": 0.333,
+          "judge_reported_f1": 0.4
+        },
+        "words": 455,
+        "commits_in_context": 19,
+        "context_chars": 46403,
+        "retrieved": [
+          "4d7aac9",
+          "bee450d",
+          "088d4be",
+          "ec3d315",
+          "1392025",
+          "7decf04",
+          "7aeb45a",
+          "da91bb2",
+          "43f3c12",
+          "e3ae449",
+          "370780a",
+          "18c0111",
+          "ac8c512",
+          "c663ee6",
+          "c24d46f",
+          "2b39c90",
+          "3af4c20",
+          "613b5e1",
+          "d6ad58f"
+        ]
+      }
+    ]
+  }
+}
