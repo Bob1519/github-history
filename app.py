@@ -15,6 +15,7 @@ from ui.sidebar import render_sidebar
 from ui.tab_commits import render_commits_tab
 from ui.tab_retrieval import render_retrieval_tab
 from ui.tab_summary import render_summary_tab
+from ui.tab_eval import render_eval_tab
 
 # Page configuration
 st.set_page_config(
@@ -98,8 +99,4 @@ with tab3:
     render_summary_tab(config)
 
 with tab4:
-    st.header("⚖️ Evaluation & Benchmark")
-    st.info(
-        "Coming up in the next step: Running the LLM judge against ground truth release notes and "
-        "calculating milestone coverage, hallucinations, and precision metrics."
-    )
+    render_eval_tab(config)
