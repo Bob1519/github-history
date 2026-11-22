@@ -97,30 +97,24 @@ def render_commits_tab(config: Dict[str, Any]):
 
     with sub_tab1:
         kept_rows = []
-        for c in kept:
-            sha = c["sha"][:7]
-            commit_info = c.get("commit", {})
-            author = commit_info.get("author", {}).get("name", "Unknown")
-            date = commit_info.get("author", {}).get("date", "")[:10]
-            msg = commit_info.get("message", "").splitlines()[0] if commit_info.get("message") else ""
-            files_count = len(c.get("files", []))
+        parsed_kept = [github_api.parse_commit(c, use_cache=True) for c in kept]
+        for p in parsed_kept:
             kept_rows.append({
-                "SHA": sha,
-                "Date": date,
-                "Author": author,
-                "Files": files_count,
-                "Message": msg,
+                "SHA": p["sha"][:7],
+                "Date": p["date"][:10],
+                "Author": p["author"],
+                "Files": len(p["files"]),
+                "Message": p["message"].splitlines()[0] if p["message"] else "",
             })
         df_kept = pd.DataFrame(kept_rows)
         st.dataframe(df_kept, use_container_width=True, hide_index=True)
 
         with st.expander("🔍 Inspect Full Diff for a Kept Commit"):
-            commit_shas_map = {f"{c['sha'][:7]} - {c.get('commit',{}).get('message','').splitlines()[0][:50]}": c for c in kept}
-            picked = st.selectbox("Pick Commit", options=list(commit_shas_map.keys()))
+            commit_map = {f"{p['sha'][:7]} - {p['message'].splitlines()[0][:50]}": p for p in parsed_kept}
+            picked = st.selectbox("Pick Commit", options=list(commit_map.keys()))
             if picked:
-                raw_picked = commit_shas_map[picked]
-                parsed = github_api.parse_commit(raw_picked, use_cache=True)
-                st.code(parsed.get("llm_summary", ""), language="markdown")
+                p_picked = commit_map[picked]
+                st.code(p_picked.get("llm_summary", ""), language="markdown")
 
     with sub_tab2:
         if not dropped:

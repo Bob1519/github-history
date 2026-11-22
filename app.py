@@ -13,6 +13,8 @@ load_dotenv()
 from github_api.github_api import GitHubAPI
 from ui.sidebar import render_sidebar
 from ui.tab_commits import render_commits_tab
+from ui.tab_retrieval import render_retrieval_tab
+from ui.tab_summary import render_summary_tab
 
 # Page configuration
 st.set_page_config(
@@ -90,18 +92,10 @@ with tab1:
     render_commits_tab(config)
 
 with tab2:
-    st.header("🔍 Semantic Retrieval & Vector Store")
-    st.info(
-        "Coming up in the next step: Building / searching the FAISS index, testing queries, "
-        "and inspecting top-k retrieved commit chunks with similarity scores."
-    )
+    render_retrieval_tab(config)
 
 with tab3:
-    st.header("📝 Release Summary Generation")
-    st.info(
-        "Coming up in the next step: Assembling the LLM context and generating the release notes "
-        "using OpenAI gpt-4o-mini with prompt customization."
-    )
+    render_summary_tab(config)
 
 with tab4:
     st.header("⚖️ Evaluation & Benchmark")
