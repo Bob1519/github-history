@@ -11,9 +11,12 @@ if str(ROOT / "src") not in sys.path:
 load_dotenv()
 
 from github_api.github_api import GitHubAPI
+from filtering.noise_filter import filter_commits
+from pipeline.cp4_pipeline import CP4Pipeline, RetrievalConfig
+from llm_api.llm_client import LLMClient
 from ui.sidebar import render_sidebar
 from ui.tab_commits import render_commits_tab
-from ui.tab_retrieval import render_retrieval_tab
+from ui.tab_retrieval import render_retrieval_tab, load_embedder, get_queries, get_prompt_path
 from ui.tab_summary import render_summary_tab
 from ui.tab_eval import render_eval_tab
 
@@ -80,6 +83,64 @@ if should_load:
             st.session_state["current_repo_key"] = repo_key
         except Exception as e:
             st.error(f"Failed to fetch commits for {repo_key}: {e}")
+
+# Handle Run Full Pipeline (End-to-End) Action
+if config["run_all_btn"]:
+    if not config["openai_key"]:
+        st.sidebar.error("⚠️ Please enter an OpenAI API key to generate the summary.")
+    else:
+        with st.spinner("⚡ Running CP4Pipeline end-to-end..."):
+            try:
+                # 1. Ensure API and commits are loaded
+                api = st.session_state.get("github_api")
+                all_shas = st.session_state.get("all_shas", [])
+                if not api or not all_shas or st.session_state.get("current_repo_key") != repo_key:
+                    api = GitHubAPI(owner=config["owner"], repo=config["repo"], github_api_key=config["github_token"] or None)
+                    all_shas = api.fetch_all_commit_shas(max_commits=config["max_commits"], use_cache=True)
+                    st.session_state["github_api"] = api
+                    st.session_state["all_shas"] = all_shas
+                    st.session_state["current_repo_key"] = repo_key
+
+                # 2. Initialize pipeline (CP4Pipeline handles commit fetching, parsing, and filtering internally)
+                embed_fn = load_embedder("bge-m3")
+                newest_sha = st.session_state.get("selected_newest_sha", all_shas[0])
+                oldest_sha = st.session_state.get("selected_oldest_sha", all_shas[-1])
+                pipe = CP4Pipeline(api, embed_fn, newest_sha, oldest_sha, embedder_name="bge-m3")
+
+                # 3. Configure retrieval
+                prompt_path = get_prompt_path(config["prompt_name"])
+                retrieval_cfg = RetrievalConfig(
+                    name="end_to_end",
+                    chunking=config["chunking"],
+                    use_filter=config["use_filter"],
+                    force_include=config["force_include"],
+                    queries=get_queries(config),
+                    k=config["top_k"],
+                    prompt_file=prompt_path,
+                )
+
+                # 4. Single call to summarize
+                out = pipe.summarize(retrieval_cfg, llm_key=config["openai_key"])
+
+                # 5. Store state so Tabs 1, 2, and 3 reflect the run
+                st.session_state["cp4_pipeline"] = pipe
+                st.session_state["retrieval_config"] = retrieval_cfg
+                st.session_state["retrieved_shas"] = [s for s in pipe.retrieve(retrieval_cfg)]
+                st.session_state["generated_summary"] = out["response"]
+                st.session_state["summary_model"] = "gpt-4o-mini"
+                st.session_state["summary_prompt"] = prompt_path.name
+
+                st.session_state["range_shas"] = pipe.range_shas
+                st.session_state["selected_newest_sha"] = newest_sha
+                st.session_state["selected_oldest_sha"] = oldest_sha
+                st.session_state["raw_commits"] = [pipe.raw[s] for s in pipe.range_shas]
+                st.session_state["kept_commits"] = [pipe.raw[s] for s in pipe.kept_shas]
+                st.session_state["dropped_commits"] = pipe.dropped
+                st.session_state["kept_shas"] = pipe.kept_shas
+
+                st.sidebar.success("✅ Full pipeline completed! Tabs 1, 2, and 3 are populated.")
+            except Exception as e:
+                st.sidebar.error(f"Pipeline failed: {e}")
 
 # Define main application tabs
 tab1, tab2, tab3, tab4 = st.tabs([

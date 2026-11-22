@@ -132,6 +132,14 @@ def render_sidebar() -> Dict[str, Any]:
         index=0,
     )
 
+    st.sidebar.divider()
+    run_all_btn = st.sidebar.button(
+        "⚡ Run Full Pipeline (End-to-End)",
+        type="primary",
+        use_container_width=True,
+        help="Runs everything in one click: fetch commits -> filter noise -> build FAISS index -> retrieve commits -> generate release summary in Tab 3.",
+    )
+
     return {
         "github_token": github_token,
         "openai_key": openai_key,
@@ -139,6 +147,7 @@ def render_sidebar() -> Dict[str, Any]:
         "repo": repo,
         "max_commits": max_commits,
         "load_btn": load_btn,
+        "run_all_btn": run_all_btn,
         "chunking": chunking,
         "use_filter": use_filter,
         "force_include": force_include,
