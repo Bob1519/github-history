@@ -72,6 +72,12 @@ python tests/cp4_retrieval_benchmark.py
 python tests/cp4_prompt_comparison.py
 ```
 
+## 7. Running the UI
+
+```bash
+streamlit run app.py
+```
+
 Results are written to `tests/test_output/cp4/` (`retrieval_results.md`, `prompt_results.md`,
 `filter_dropped.json`, and each generated summary with its judge output).
 
