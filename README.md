@@ -8,7 +8,7 @@ A tool to analyze github repositories
 Initialize a virtual environment in the project root directory:
 
 ```bash
-conda create --file environment.yml  
+conda env create -f environment.yml
 ```
 
 ### 2. Activate the Virtual Environment
@@ -49,13 +49,13 @@ Execute the pipeline components from the activated virtual environment:
 
 ```bash
 # test github API
-python ./src/github_api_test.py
+python tests/github_api_test.py
 
 # Test LLM client
-python ./src/llm_client_test.py
+python tests/llm_client_test.py
 
 #Test the FAISS database
-python ./src/faiss_init_test.py
+python tests/faiss_init_test.py
 
 #Test the tqdm pipeline result
 python tests/tqdm_200_314_test.py  
@@ -81,6 +81,35 @@ Results are written to `tests/test_output/cp4/` (`retrieval_results.md`, `prompt
 streamlit run app.py
 ```
 
+Opens a local web page (http://localhost:8501). Pick a cached repo or type any `owner/repo`, click
+**Load / Refresh Commits**, then work through the four tabs: (1) commit range + noise filter,
+(2) FAISS index + retrieval, (3) LLM summary, (4) LLM judge + deterministic re-scoring against a
+ground-truth file. **Run Full Pipeline** in the sidebar does tabs 1-3 in one click. The default
+range is the newest 200 commits, because each uncached commit costs one GitHub API call.
+
+The first bge-m3 run downloads the model (~2.3 GB) into the Hugging Face cache; later runs are offline.
+
+## 8. Checkpoint 5 multi-repository benchmark
+
+```bash
+# Filter + retrieval metrics on flask, fastapi and tqdm. No OpenAI cost.
+# First run pulls ~280 commits plus the full SHA lists from GitHub (~410 requests, needs a token).
+python tests/cp5_benchmark.py --retrieval-only
+
+# Full run: also generates summaries (CP3 baseline vs CP4 config, 2 runs each) and judges them.
+python tests/cp5_benchmark.py
+```
+
+| Repo | Range | Ground truth |
+|---|---|---|
+| pallets/flask | 3.0.3 -> 3.1.0 | `tests/test_ground_truth/flask_303_310_*` (10 milestones, from CHANGES.rst) |
+| fastapi/fastapi | 0.99.0 -> 0.103.0 | `tests/test_ground_truth/fastapi_099_103_*` (9 milestones, from release-notes.md) |
+| tqdm/tqdm | v2.0.0 -> v3.1.4 | `tests/test_ground_truth/tqdm_200_314_*` (CP4 range) |
+
+Results go to `tests/test_output/cp5/benchmark_results.md` / `.json`, with per-repo summaries,
+judge audits and filter logs in `tests/test_output/cp5/<repo>/`. `--embedder hashing` is an
+offline smoke test only; its outputs are written with a `_hashing` suffix and are not reported.
+
 
 ## Checkpoints
 
@@ -104,3 +133,7 @@ Groundwork for the embedding checkpoint (not yet part of the pipeline):
 `src/vector_store/faiss_index.py` (`CommitVectorStore`) and `LLMClient.embed()` embed commit text, build/save/load a FAISS index and return top-k search results; `src/faiss_test.py` runs and benchmarks it (needs `OPENAI_API_KEY`, or `--offline` for a low-quality local embedder). Commit chunking is not implemented yet; the store currently embeds one vector per commit.
 
 Checkpoint 3: Created the main pipeline implementation.
+
+Checkpoint 4: Chunking comparison (per-commit vs per-file), noise filter, forced inclusion of first/last commit and README, multi-query retrieval, deterministic re-scoring of the LLM judge.
+
+Checkpoint 5: Streamlit UI over the CP4 pipeline (`app.py`, `src/ui/`) and a multi-repository benchmark on pallets/flask and fastapi/fastapi with changelog-derived ground truth (`tests/cp5_benchmark.py`).

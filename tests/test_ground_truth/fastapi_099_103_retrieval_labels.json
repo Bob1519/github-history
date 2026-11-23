@@ -1,0 +1,17 @@
+{
+  "_description": "Retrieval ground truth for fastapi/fastapi 0.99.0 (983f1d3) -> 0.103.0 (415eb14). Each Features/Fixes item in the official release notes (docs/en/docs/release-notes.md at tag 0.103.0) for 0.99.1-0.103.0 is mapped to its commit. FastAPI squash-merges PRs, so each label is the single commit whose message ends with the PR number from the release notes. The three 0.100.0 milestones all live in one squashed commit (#9816, 274 files changed). Docs, translations, sponsors and dependency bumps are not milestones.",
+  "repo": "fastapi/fastapi",
+  "newest_sha": "415eb1405a5bc93a32e14c15d690517c95d26743",
+  "oldest_sha": "983f1d34dbc9443fcd12159647aabdeabc5032a7",
+  "milestones": [
+    {"id": "openapi_examples", "query": "Add support for openapi_examples in all FastAPI parameters", "relevant": ["1b714b3"]},
+    {"id": "separate_io_schemas", "query": "Disable separation of input and output JSON Schemas with separate_input_output_schemas=False", "relevant": ["ea43f22"]},
+    {"id": "response_validation_error_details", "query": "ResponseValidationError printable details in server error logs", "relevant": ["5e8f7f1"]},
+    {"id": "serialization_mode", "query": "Pydantic serialization mode for responses and computed_field support", "relevant": ["19a2c3b"]},
+    {"id": "anyurl_compat", "query": "Replace MultiHostUrl with AnyUrl for compatibility with Pydantic v1", "relevant": ["6c99e90"]},
+    {"id": "pydantic_v2", "query": "Add support for Pydantic v2 while keeping Pydantic v1 support", "relevant": ["0976185"]},
+    {"id": "new_param_fields", "query": "New Pydantic Field parameters for Query, Path, Body; regex deprecated in favour of pattern", "relevant": ["0976185"]},
+    {"id": "pydantic_settings", "query": "Settings moved to pydantic-settings package, fastapi[all] includes pydantic-settings and pydantic-extra-types", "relevant": ["0976185"]},
+    {"id": "json_schema_bools", "query": "Fix JSON Schema accepting bools as valid JSON Schemas, additionalProperties false", "relevant": ["07e1dea"]}
+  ]
+}

@@ -21,6 +21,20 @@ class GitHubAPI():
 
         if github_api_key:
             self.headers["Authorization"] = f"Bearer {github_api_key}"
+
+        self._remember_owner()
+
+    def _remember_owner(self):
+        """Record owner/repo in github_cache/_repo_owners.json so the UI can list cached repos
+        under their real owner (cache files are keyed by repo name only, e.g. pallets/flask -> flask_*)."""
+        registry = self.cache_dir / "_repo_owners.json"
+        try:
+            owners = json.loads(registry.read_text(encoding="utf-8")) if registry.exists() else {}
+        except (OSError, json.JSONDecodeError):
+            owners = {}
+        if owners.get(self.repo) != self.owner:
+            owners[self.repo] = self.owner
+            registry.write_text(json.dumps(owners, indent=2, sort_keys=True), encoding="utf-8")
     
     def is_rate_limited(self, err: requests.exceptions.HTTPError) -> bool:
         return err.response is not None and err.response.status_code in (403, 429)

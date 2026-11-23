@@ -3,6 +3,15 @@ import pandas as pd
 import streamlit as st
 from filtering.noise_filter import filter_commits
 
+# Each commit in the selected range costs one GitHub API call the first time it is loaded, so the
+# default range is the newest DEFAULT_WINDOW commits rather than the whole history (fastapi has
+# 8,000+ commits, more than the 5,000 requests/hour token limit). Users can widen it below.
+DEFAULT_WINDOW = 200
+
+
+def default_oldest(all_shas: List[str]) -> str:
+    return all_shas[min(len(all_shas), DEFAULT_WINDOW) - 1]
+
 
 def render_commits_tab(config: Dict[str, Any]):
     st.header("📦 Commit Selection & Noise Pre-Filtering")
@@ -24,12 +33,12 @@ def render_commits_tab(config: Dict[str, Any]):
     col1, col2 = st.columns(2)
 
     curr_newest = st.session_state.get("selected_newest_sha", all_shas[0])
-    curr_oldest = st.session_state.get("selected_oldest_sha", all_shas[-1])
+    curr_oldest = st.session_state.get("selected_oldest_sha", default_oldest(all_shas))
 
     if curr_newest not in all_shas:
         curr_newest = all_shas[0]
     if curr_oldest not in all_shas:
-        curr_oldest = all_shas[-1]
+        curr_oldest = default_oldest(all_shas)
 
     newest_idx_default = all_shas.index(curr_newest)
     oldest_idx_default = all_shas.index(curr_oldest)
@@ -68,7 +77,14 @@ def render_commits_tab(config: Dict[str, Any]):
 
     # Fetch raw commits for range
     with st.spinner(f"Loading {len(range_shas)} commits in selected range..."):
-        raw_commits = [github_api.get_commit(sha, use_cache=True) for sha in range_shas]
+        try:
+            raw_commits = [github_api.get_commit(sha, use_cache=True) for sha in range_shas]
+        except Exception as e:  # rate limit / network: already-fetched commits stay cached
+            st.error(
+                f"Could not fetch every commit in this range ({e}). Commits fetched so far are cached; "
+                "add a GitHub token, wait for the rate limit to reset, or choose a smaller range."
+            )
+            return
         st.session_state["raw_commits"] = raw_commits
 
     # Filter Commits

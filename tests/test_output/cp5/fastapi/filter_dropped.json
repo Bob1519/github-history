@@ -1,0 +1,22 @@
+[
+  {
+    "sha": "bdd9912",
+    "message": "\u270f\ufe0f Fix typo in deprecation warnings in `fastapi/params.py` (#9854)",
+    "reason": "trivial change ('\u270f\ufe0f Fix typo in deprecation warnings in `fastapi/pa', <= 10 lines)"
+  },
+  {
+    "sha": "69d5ebf",
+    "message": "\u270f\ufe0f Fix typo in release notes (#9835)",
+    "reason": "trivial change ('\u270f\ufe0f Fix typo in release notes (#9835)', <= 10 lines)"
+  },
+  {
+    "sha": "0b496ea",
+    "message": "\ud83d\udcdd Fix typo in `docs/en/docs/contributing.md` (#9878)",
+    "reason": "trivial change ('\ud83d\udcdd Fix typo in `docs/en/docs/contributing.md` (#987', <= 10 lines)"
+  },
+  {
+    "sha": "c2a33f1",
+    "message": "\ud83c\udf71 Update sponsors, Fern badge (#9982)",
+    "reason": "binary/asset files only"
+  }
+]

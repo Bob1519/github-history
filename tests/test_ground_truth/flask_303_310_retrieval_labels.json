@@ -1,0 +1,18 @@
+{
+  "_description": "Retrieval ground truth for pallets/flask 3.0.3 (c12a5d8) -> 3.1.0 (ab81496). Each item in the official 3.1.0 changelog (CHANGES.rst at tag 3.1.0) is mapped to the non-merge commit(s) that implement it. Labels were assigned by matching the changelog's PR/issue numbers to the merged branch commits and checking each commit's changed files. Merge commits are not labelled because the noise filter drops them (their content is in the branch commits).",
+  "repo": "pallets/flask",
+  "newest_sha": "ab8149664182b662453a563161aa89013c806dc9",
+  "oldest_sha": "c12a5d874c5a014495eb2db8a73f40037bc813ac",
+  "milestones": [
+    {"id": "drop_py38", "query": "Drop support for Python 3.8", "relevant": ["1d610e4"]},
+    {"id": "min_dependencies", "query": "Update minimum dependency versions: Werkzeug 3.1, ItsDangerous 2.2, Blinker 1.9", "relevant": ["8f37c82", "470e2b8"]},
+    {"id": "automatic_options", "query": "Configuration option to control automatic OPTIONS responses", "relevant": ["d718ecf"]},
+    {"id": "open_resource_encoding", "query": "open_resource takes an encoding parameter for text mode", "relevant": ["28d5a4d"]},
+    {"id": "resource_limits", "query": "Per-request max_content_length, MAX_FORM_MEMORY_SIZE and MAX_FORM_PARTS config", "relevant": ["c7a5388"]},
+    {"id": "partitioned_cookie", "query": "Partitioned cookie attribute with SESSION_COOKIE_PARTITIONED config", "relevant": ["9efc1eb"]},
+    {"id": "env_file_precedence", "query": "-e path takes precedence over default .env and .flaskenv files", "relevant": ["2c31603"]},
+    {"id": "secret_key_rotation", "query": "Secret key rotation with SECRET_KEY_FALLBACKS", "relevant": ["e13373f"]},
+    {"id": "server_name_matching", "query": "Fix host_matching and subdomain_matching interaction with SERVER_NAME", "relevant": ["4995a77"]},
+    {"id": "trusted_hosts", "query": "Request.trusted_hosts checked during routing, TRUSTED_HOSTS config", "relevant": ["4f7156f"]}
+  ]
+}

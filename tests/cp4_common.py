@@ -15,7 +15,10 @@ def make_embedder(name: str):
     smoke-test the scripts on a machine without the model; its numbers are not reported."""
     if name == "bge-m3":
         from sentence_transformers import SentenceTransformer
-        model = SentenceTransformer("BAAI/bge-m3", local_files_only=True)
+        try:
+            model = SentenceTransformer("BAAI/bge-m3", local_files_only=True)
+        except Exception:  # not downloaded yet: fetch it once (~2.3 GB) into the Hugging Face cache
+            model = SentenceTransformer("BAAI/bge-m3")
         return lambda texts: model.encode(texts, batch_size=8, show_progress_bar=len(texts) > 50).tolist()
     if name == "hashing":
         from sklearn.feature_extraction.text import HashingVectorizer

@@ -1,0 +1,109 @@
+{
+  "ground_truth_recall_audit": [
+    {
+      "milestone": "Dropped support for Python 3.8 and raised the minimum dependency versions to the latest feature releases",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Added a configuration option to control whether Flask automatically answers OPTIONS requests",
+      "status": "covered",
+      "matching_narrative_excerpt": "the commit on June 5, 2024 (SHA: d718ecf6) introduced a configuration option, `PROVIDE_AUTOMATIC_OPTIONS`, which allows developers to disable automatically generated OPTIONS responses."
+    },
+    {
+      "milestone": "Flask.open_resource, open_instance_resource and Blueprint.open_resource take an encoding parameter for text mode, defaulting to utf-8",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Request.max_content_length can be customized per request instead of only through the MAX_CONTENT_LENGTH config, and new MAX_FORM_MEMORY_SIZE and MAX_FORM_PARTS configs were added",
+      "status": "covered",
+      "matching_narrative_excerpt": "the commit on November 1, 2024 (SHA: c7a5388) introduced `MAX_FORM_MEMORY_SIZE` and `MAX_FORM_PARTS`, allowing developers to set limits on the size and number of form fields in multipart requests."
+    },
+    {
+      "milestone": "Added support for the Partitioned cookie attribute through the SESSION_COOKIE_PARTITIONED config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Changed .env loading so that `-e path` takes precedence over the default .env and .flaskenv files",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Added secret key rotation with the SECRET_KEY_FALLBACKS config",
+      "status": "covered",
+      "matching_narrative_excerpt": "the commit on November 8, 2024 (SHA: e13373f) added support for `SECRET_KEY_FALLBACKS`, enabling applications to maintain compatibility with older sessions while transitioning to new secret keys."
+    },
+    {
+      "milestone": "Fixed how host_matching=True and subdomain_matching=False interact with SERVER_NAME",
+      "status": "covered",
+      "matching_narrative_excerpt": "the fix for `subdomain_matching=False` behavior (commit on November 11, 2024, SHA: 4995a775) addressed how the `SERVER_NAME` configuration interacts with request handling."
+    },
+    {
+      "milestone": "Request.trusted_hosts is now checked during routing and can be set through the TRUSTED_HOSTS config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    }
+  ],
+  "narrative_precision_audit": [
+    {
+      "narrative_claim": "the commit on June 5, 2024 (SHA: d718ecf6) introduced a configuration option, `PROVIDE_AUTOMATIC_OPTIONS`, which allows developers to disable automatically generated OPTIONS responses.",
+      "matches_ground_truth": true,
+      "matched_milestone": "Added a configuration option to control whether Flask automatically answers OPTIONS requests"
+    },
+    {
+      "narrative_claim": "the commit on November 1, 2024 (SHA: c7a5388) introduced `MAX_FORM_MEMORY_SIZE` and `MAX_FORM_PARTS`, allowing developers to set limits on the size and number of form fields in multipart requests.",
+      "matches_ground_truth": true,
+      "matched_milestone": "Request.max_content_length can be customized per request instead of only through the MAX_CONTENT_LENGTH config, and new MAX_FORM_MEMORY_SIZE and MAX_FORM_PARTS configs were added"
+    },
+    {
+      "narrative_claim": "the commit on November 8, 2024 (SHA: e13373f) added support for `SECRET_KEY_FALLBACKS`, enabling applications to maintain compatibility with older sessions while transitioning to new secret keys.",
+      "matches_ground_truth": true,
+      "matched_milestone": "Added secret key rotation with the SECRET_KEY_FALLBACKS config"
+    },
+    {
+      "narrative_claim": "the fix for `subdomain_matching=False` behavior (commit on November 11, 2024, SHA: 4995a775) addressed how the `SERVER_NAME` configuration interacts with request handling.",
+      "matches_ground_truth": true,
+      "matched_milestone": "Fixed how host_matching=True and subdomain_matching=False interact with SERVER_NAME"
+    },
+    {
+      "narrative_claim": "the commit on April 8, 2024 (SHA: f958b650) modified the `tox.ini` file to build documentation from scratch for each test.",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "the introduction of the `gha-update` tool (commit on August 23, 2024, SHA: 0f2ae2) streamlined the process of updating GitHub Actions dependencies.",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "the commit on August 1, 2024 (SHA: 4fe0aebab) updated several GitHub Actions.",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "the updates to development dependencies in the commits on August 23, 2024 (SHA: 29a94bd) and November 13, 2024 (SHA: 6748a093) demonstrate a commitment to maintaining a modern and efficient development environment.",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "the recent release of version 3.1.0 (commit on November 13, 2024, SHA: ab814966) encapsulates these enhancements.",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    }
+  ],
+  "counts": {
+    "total_gt_milestones": 9,
+    "covered_milestones": 5,
+    "partially_covered_milestones": 0,
+    "missed_milestones": 4,
+    "total_narrative_claims": 10,
+    "matched_narrative_claims": 4
+  },
+  "metrics": {
+    "end_to_end_recall": 0.5,
+    "end_to_end_precision": 0.4,
+    "pipeline_f1_score": 0.444
+  }
+}

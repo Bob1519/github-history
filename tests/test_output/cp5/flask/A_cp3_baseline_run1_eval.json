@@ -1,0 +1,114 @@
+{
+  "ground_truth_recall_audit": [
+    {
+      "milestone": "Dropped support for Python 3.8 and raised the minimum dependency versions to the latest feature releases",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Added a configuration option to control whether Flask automatically answers OPTIONS requests",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Flask.open_resource, open_instance_resource and Blueprint.open_resource take an encoding parameter for text mode",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Request.max_content_length can be customized per request instead of only through the MAX_CONTENT_LENGTH config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Added support for the Partitioned cookie attribute through the SESSION_COOKIE_PARTITIONED config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Changed .env loading so that -e path takes precedence over the default .env and .flaskenv files",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Added secret key rotation with the SECRET_KEY_FALLBACKS config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Fixed how host_matching=True and subdomain_matching=False interact with SERVER_NAME",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Request.trusted_hosts is now checked during routing and can be set through the TRUSTED_HOSTS config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    }
+  ],
+  "narrative_precision_audit": [
+    {
+      "narrative_claim": "significant update to the GitHub Actions workflows, specifically in the publish.yaml and tests.yaml files",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "bumping the versions of several actions, such as actions/setup-python from v5.1.0 to v5.1.1",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "a more comprehensive update was made to the CI/CD workflows",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "updates to the requirements files, indicating a broader strategy to maintain a healthy and modern development environment",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "updates to its development dependencies",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "updates to libraries such as pytest, mypy, and cryptography",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "continuous cycle of updating dependencies demonstrates a commitment to leveraging improvements and fixes",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "updates to the pre-commit configuration files",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "pre-commit hooks were updated from v0.6.2 to v0.7.0 and subsequently to v0.7.1",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Each update, whether it be a minor version bump or a more significant overhaul, contributes to a more robust and maintainable codebase",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    }
+  ],
+  "counts": {
+    "total_gt_milestones": 9,
+    "covered_milestones": 0,
+    "partially_covered_milestones": 0,
+    "missed_milestones": 9,
+    "total_narrative_claims": 10,
+    "matched_narrative_claims": 0
+  },
+  "metrics": {
+    "end_to_end_recall": 0.0,
+    "end_to_end_precision": 0.0,
+    "pipeline_f1_score": 0.0
+  }
+}

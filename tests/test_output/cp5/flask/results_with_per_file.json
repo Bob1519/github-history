@@ -1,0 +1,1138 @@
+{
+  "repo": "pallets/flask",
+  "range": "3.0.3 -> 3.1.0",
+  "newest_sha": "ab8149664182b662453a563161aa89013c806dc9",
+  "oldest_sha": "c12a5d874c5a014495eb2db8a73f40037bc813ac",
+  "num_milestones": 10,
+  "embedder": "bge-m3",
+  "fetch_and_parse_s": 91.6,
+  "filter": {
+    "total_commits": 118,
+    "kept": 70,
+    "dropped": 48,
+    "drop_reasons": {
+      "merge commit": 47,
+      "trivial change": 1
+    },
+    "labelled_commits_missing_from_range": [],
+    "labelled_commits_dropped": []
+  },
+  "part_a_milestone_retrieval": {
+    "per_commit": {
+      "summary": {
+        "hit@1": 0.7,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "recall@1": 0.65,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.85,
+        "num_chunks": 118
+      },
+      "per_milestone": {
+        "drop_py38": {
+          "hit@1": 0,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 0.5,
+          "top5": [
+            "99ce7ed",
+            "1d610e4",
+            "346d1ab",
+            "f567ab9",
+            "c77b099"
+          ]
+        },
+        "min_dependencies": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.5,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "8f37c82",
+            "470e2b8",
+            "07c7d57",
+            "62c56e0",
+            "273123f"
+          ]
+        },
+        "automatic_options": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "d718ecf",
+            "66af0e5",
+            "0ce2727",
+            "67ed369",
+            "8a6cdf1"
+          ]
+        },
+        "open_resource_encoding": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "28d5a4d",
+            "a8956fe",
+            "767ad19",
+            "bb16048",
+            "176fdfa"
+          ]
+        },
+        "resource_limits": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "c7a5388",
+            "6f2014d",
+            "9efc1eb",
+            "ce08bc7",
+            "11c15dd"
+          ]
+        },
+        "partitioned_cookie": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "9efc1eb",
+            "ce08bc7",
+            "a2f495b",
+            "4a1766c",
+            "ab81496"
+          ]
+        },
+        "env_file_precedence": {
+          "hit@1": 0,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 0.5,
+          "top5": [
+            "7522c4b",
+            "2c31603",
+            "a8956fe",
+            "74721b4",
+            "68150d4"
+          ]
+        },
+        "secret_key_rotation": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "e13373f",
+            "a20bcff",
+            "767ad19",
+            "bb16048",
+            "321bd74"
+          ]
+        },
+        "server_name_matching": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "4995a77",
+            "10bdf61",
+            "bb16048",
+            "767ad19",
+            "176fdfa"
+          ]
+        },
+        "trusted_hosts": {
+          "hit@1": 0,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 0.5,
+          "top5": [
+            "7b21d43",
+            "4f7156f",
+            "10bdf61",
+            "5353f30",
+            "321bd74"
+          ]
+        }
+      }
+    },
+    "per_commit+filter": {
+      "summary": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "recall@1": 0.95,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "num_chunks": 70
+      },
+      "per_milestone": {
+        "drop_py38": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "1d610e4",
+            "346d1ab",
+            "f567ab9",
+            "c77b099",
+            "e13373f"
+          ]
+        },
+        "min_dependencies": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.5,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "8f37c82",
+            "470e2b8",
+            "273123f",
+            "e165f3a",
+            "224c639"
+          ]
+        },
+        "automatic_options": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "d718ecf",
+            "3d35727",
+            "767ad19",
+            "28d5a4d",
+            "4995a77"
+          ]
+        },
+        "open_resource_encoding": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "28d5a4d",
+            "767ad19",
+            "176fdfa",
+            "74721b4",
+            "a9b99b3"
+          ]
+        },
+        "resource_limits": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "c7a5388",
+            "9efc1eb",
+            "d718ecf",
+            "ab81496",
+            "4a1766c"
+          ]
+        },
+        "partitioned_cookie": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "9efc1eb",
+            "4a1766c",
+            "ab81496",
+            "f49dbfd",
+            "eb1182a"
+          ]
+        },
+        "env_file_precedence": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "2c31603",
+            "74721b4",
+            "28d5a4d",
+            "767ad19",
+            "346d1ab"
+          ]
+        },
+        "secret_key_rotation": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "e13373f",
+            "767ad19",
+            "321bd74",
+            "4995a77",
+            "a363642"
+          ]
+        },
+        "server_name_matching": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "4995a77",
+            "767ad19",
+            "176fdfa",
+            "321bd74",
+            "4f7156f"
+          ]
+        },
+        "trusted_hosts": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "4f7156f",
+            "321bd74",
+            "4995a77",
+            "e13373f",
+            "767ad19"
+          ]
+        }
+      }
+    },
+    "per_file": {
+      "summary": {
+        "hit@1": 0.9,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "recall@1": 0.85,
+        "recall@3": 0.95,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 0.95,
+        "num_chunks": 396
+      },
+      "per_milestone": {
+        "drop_py38": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "1d610e4",
+            "99ce7ed",
+            "c77b099",
+            "f567ab9",
+            "eeb5f95"
+          ]
+        },
+        "min_dependencies": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.5,
+          "recall@3": 0.5,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "8f37c82",
+            "62c56e0",
+            "07c7d57",
+            "470e2b8",
+            "29a94bd"
+          ]
+        },
+        "automatic_options": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "d718ecf",
+            "c7a5388",
+            "6f2014d",
+            "8a6cdf1",
+            "67ed369"
+          ]
+        },
+        "open_resource_encoding": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "28d5a4d",
+            "a8956fe",
+            "a9b99b3",
+            "e13373f",
+            "767ad19"
+          ]
+        },
+        "resource_limits": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "c7a5388",
+            "6f2014d",
+            "4e6384d",
+            "11c15dd",
+            "ce08bc7"
+          ]
+        },
+        "partitioned_cookie": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "9efc1eb",
+            "ce08bc7",
+            "a2f495b",
+            "4a1766c",
+            "ab81496"
+          ]
+        },
+        "env_file_precedence": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "2c31603",
+            "7522c4b",
+            "74721b4",
+            "68150d4",
+            "a8956fe"
+          ]
+        },
+        "secret_key_rotation": {
+          "hit@1": 0,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 0.5,
+          "top5": [
+            "a20bcff",
+            "e13373f",
+            "767ad19",
+            "bb16048",
+            "321bd74"
+          ]
+        },
+        "server_name_matching": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "4995a77",
+            "10bdf61",
+            "4e6384d",
+            "767ad19",
+            "bb16048"
+          ]
+        },
+        "trusted_hosts": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "4f7156f",
+            "7b21d43",
+            "10bdf61",
+            "e13373f",
+            "a20bcff"
+          ]
+        }
+      }
+    },
+    "per_file+filter": {
+      "summary": {
+        "hit@1": 1.0,
+        "hit@3": 1.0,
+        "hit@5": 1.0,
+        "hit@10": 1.0,
+        "recall@1": 0.95,
+        "recall@3": 1.0,
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "mrr": 1.0,
+        "num_chunks": 201
+      },
+      "per_milestone": {
+        "drop_py38": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "1d610e4",
+            "c77b099",
+            "f567ab9",
+            "e165f3a",
+            "40b78fa"
+          ]
+        },
+        "min_dependencies": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 0.5,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "8f37c82",
+            "470e2b8",
+            "29a94bd",
+            "273123f",
+            "e165f3a"
+          ]
+        },
+        "automatic_options": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "d718ecf",
+            "c7a5388",
+            "e13373f",
+            "f93dd6e",
+            "9efc1eb"
+          ]
+        },
+        "open_resource_encoding": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "28d5a4d",
+            "a9b99b3",
+            "e13373f",
+            "767ad19",
+            "9e831e9"
+          ]
+        },
+        "resource_limits": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "c7a5388",
+            "9efc1eb",
+            "6748a09",
+            "29a94bd",
+            "39e7208"
+          ]
+        },
+        "partitioned_cookie": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "9efc1eb",
+            "4a1766c",
+            "ab81496",
+            "e13373f",
+            "f49dbfd"
+          ]
+        },
+        "env_file_precedence": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "2c31603",
+            "74721b4",
+            "346d1ab",
+            "28d5a4d",
+            "ccf125b"
+          ]
+        },
+        "secret_key_rotation": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "e13373f",
+            "767ad19",
+            "321bd74",
+            "a363642",
+            "4995a77"
+          ]
+        },
+        "server_name_matching": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "4995a77",
+            "767ad19",
+            "4f7156f",
+            "321bd74",
+            "176fdfa"
+          ]
+        },
+        "trusted_hosts": {
+          "hit@1": 1,
+          "hit@3": 1,
+          "hit@5": 1,
+          "hit@10": 1,
+          "recall@1": 1.0,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "rr": 1.0,
+          "top5": [
+            "4f7156f",
+            "e13373f",
+            "4995a77",
+            "321bd74",
+            "9efc1eb"
+          ]
+        }
+      }
+    }
+  },
+  "part_b_pipeline_coverage": {
+    "per_commit | cp3_single_query": {
+      "commits_in_context": 5,
+      "milestones_covered": 0,
+      "milestones_total": 10,
+      "covered_ids": [],
+      "missed_ids": [
+        "drop_py38",
+        "min_dependencies",
+        "automatic_options",
+        "open_resource_encoding",
+        "resource_limits",
+        "partitioned_cookie",
+        "env_file_precedence",
+        "secret_key_rotation",
+        "server_name_matching",
+        "trusted_hosts"
+      ],
+      "relevant_commits_in_context": 0,
+      "context_precision": 0.0
+    },
+    "per_commit | cp4_multi_query": {
+      "commits_in_context": 23,
+      "milestones_covered": 4,
+      "milestones_total": 10,
+      "covered_ids": [
+        "automatic_options",
+        "open_resource_encoding",
+        "resource_limits",
+        "server_name_matching"
+      ],
+      "missed_ids": [
+        "drop_py38",
+        "min_dependencies",
+        "partitioned_cookie",
+        "env_file_precedence",
+        "secret_key_rotation",
+        "trusted_hosts"
+      ],
+      "relevant_commits_in_context": 4,
+      "context_precision": 0.174
+    },
+    "per_commit+filter | cp3_single_query": {
+      "commits_in_context": 5,
+      "milestones_covered": 0,
+      "milestones_total": 10,
+      "covered_ids": [],
+      "missed_ids": [
+        "drop_py38",
+        "min_dependencies",
+        "automatic_options",
+        "open_resource_encoding",
+        "resource_limits",
+        "partitioned_cookie",
+        "env_file_precedence",
+        "secret_key_rotation",
+        "server_name_matching",
+        "trusted_hosts"
+      ],
+      "relevant_commits_in_context": 0,
+      "context_precision": 0.0
+    },
+    "per_commit+filter | cp4_multi_query": {
+      "commits_in_context": 21,
+      "milestones_covered": 6,
+      "milestones_total": 10,
+      "covered_ids": [
+        "min_dependencies",
+        "automatic_options",
+        "open_resource_encoding",
+        "resource_limits",
+        "secret_key_rotation",
+        "server_name_matching"
+      ],
+      "missed_ids": [
+        "drop_py38",
+        "partitioned_cookie",
+        "env_file_precedence",
+        "trusted_hosts"
+      ],
+      "relevant_commits_in_context": 6,
+      "context_precision": 0.286
+    },
+    "per_file | cp3_single_query": {
+      "commits_in_context": 5,
+      "milestones_covered": 0,
+      "milestones_total": 10,
+      "covered_ids": [],
+      "missed_ids": [
+        "drop_py38",
+        "min_dependencies",
+        "automatic_options",
+        "open_resource_encoding",
+        "resource_limits",
+        "partitioned_cookie",
+        "env_file_precedence",
+        "secret_key_rotation",
+        "server_name_matching",
+        "trusted_hosts"
+      ],
+      "relevant_commits_in_context": 0,
+      "context_precision": 0.0
+    },
+    "per_file | cp4_multi_query": {
+      "commits_in_context": 19,
+      "milestones_covered": 3,
+      "milestones_total": 10,
+      "covered_ids": [
+        "open_resource_encoding",
+        "resource_limits",
+        "server_name_matching"
+      ],
+      "missed_ids": [
+        "drop_py38",
+        "min_dependencies",
+        "automatic_options",
+        "partitioned_cookie",
+        "env_file_precedence",
+        "secret_key_rotation",
+        "trusted_hosts"
+      ],
+      "relevant_commits_in_context": 3,
+      "context_precision": 0.158
+    },
+    "per_file+filter | cp3_single_query": {
+      "commits_in_context": 5,
+      "milestones_covered": 0,
+      "milestones_total": 10,
+      "covered_ids": [],
+      "missed_ids": [
+        "drop_py38",
+        "min_dependencies",
+        "automatic_options",
+        "open_resource_encoding",
+        "resource_limits",
+        "partitioned_cookie",
+        "env_file_precedence",
+        "secret_key_rotation",
+        "server_name_matching",
+        "trusted_hosts"
+      ],
+      "relevant_commits_in_context": 0,
+      "context_precision": 0.0
+    },
+    "per_file+filter | cp4_multi_query": {
+      "commits_in_context": 14,
+      "milestones_covered": 3,
+      "milestones_total": 10,
+      "covered_ids": [
+        "open_resource_encoding",
+        "resource_limits",
+        "server_name_matching"
+      ],
+      "missed_ids": [
+        "drop_py38",
+        "min_dependencies",
+        "automatic_options",
+        "partitioned_cookie",
+        "env_file_precedence",
+        "secret_key_rotation",
+        "trusted_hosts"
+      ],
+      "relevant_commits_in_context": 3,
+      "context_precision": 0.214
+    }
+  },
+  "part_c_end_to_end": {
+    "A_cp3_baseline": {
+      "mean_recall": 0.0,
+      "mean_precision": 0.0,
+      "mean_f1": 0.0,
+      "f1_runs": [
+        0.0,
+        0.0
+      ],
+      "unparsed_runs": 0,
+      "mean_words": 503,
+      "commits_in_context": 5,
+      "context_chars": 14495,
+      "judge_inconsistent_labels": 0,
+      "runs": [
+        {
+          "score": {
+            "total_gt_milestones": 9,
+            "covered": 0,
+            "partially_covered": 0,
+            "total_claims": 14,
+            "matched_claims": 0,
+            "inconsistent_judge_labels": 0,
+            "recall": 0.0,
+            "precision": 0.0,
+            "f1": 0.0,
+            "judge_reported_f1": 0.0
+          },
+          "words": 514,
+          "commits_in_context": 5,
+          "context_chars": 14495,
+          "retrieved": [
+            "a791997",
+            "b337d21",
+            "bca1804",
+            "8f2bc00",
+            "6748a09"
+          ]
+        },
+        {
+          "score": {
+            "total_gt_milestones": 9,
+            "covered": 0,
+            "partially_covered": 0,
+            "total_claims": 4,
+            "matched_claims": 0,
+            "inconsistent_judge_labels": 0,
+            "recall": 0.0,
+            "precision": 0.0,
+            "f1": 0.0,
+            "judge_reported_f1": 0.0
+          },
+          "words": 492,
+          "commits_in_context": 5,
+          "context_chars": 14495,
+          "retrieved": [
+            "a791997",
+            "b337d21",
+            "bca1804",
+            "8f2bc00",
+            "6748a09"
+          ]
+        }
+      ]
+    },
+    "B_cp4_retrieval": {
+      "mean_recall": 0.555,
+      "mean_precision": 0.584,
+      "mean_f1": 0.569,
+      "f1_runs": [
+        0.667,
+        0.471
+      ],
+      "unparsed_runs": 0,
+      "mean_words": 610,
+      "commits_in_context": 23,
+      "context_chars": 50631,
+      "judge_inconsistent_labels": 0,
+      "runs": [
+        {
+          "score": {
+            "total_gt_milestones": 9,
+            "covered": 6,
+            "partially_covered": 0,
+            "total_claims": 9,
+            "matched_claims": 6,
+            "inconsistent_judge_labels": 0,
+            "recall": 0.667,
+            "precision": 0.667,
+            "f1": 0.667,
+            "judge_reported_f1": 0.645
+          },
+          "words": 649,
+          "commits_in_context": 23,
+          "context_chars": 50631,
+          "retrieved": [
+            "c12a5d8",
+            "346d1ab",
+            "f958b65",
+            "b727818",
+            "a363642",
+            "767ad19",
+            "d718ecf",
+            "28d5a4d",
+            "4fe0aeb",
+            "0f2ae2b",
+            "29a94bd",
+            "b337d21",
+            "96800fb",
+            "5e8cb74",
+            "9e831e9",
+            "8f37c82",
+            "c7a5388",
+            "a9b99b3",
+            "98ae718",
+            "e13373f",
+            "4995a77",
+            "6748a09",
+            "ab81496"
+          ]
+        },
+        {
+          "score": {
+            "total_gt_milestones": 9,
+            "covered": 4,
+            "partially_covered": 0,
+            "total_claims": 8,
+            "matched_claims": 4,
+            "inconsistent_judge_labels": 0,
+            "recall": 0.444,
+            "precision": 0.5,
+            "f1": 0.471,
+            "judge_reported_f1": 0.556
+          },
+          "words": 572,
+          "commits_in_context": 23,
+          "context_chars": 50631,
+          "retrieved": [
+            "c12a5d8",
+            "346d1ab",
+            "f958b65",
+            "b727818",
+            "a363642",
+            "767ad19",
+            "d718ecf",
+            "28d5a4d",
+            "4fe0aeb",
+            "0f2ae2b",
+            "29a94bd",
+            "b337d21",
+            "96800fb",
+            "5e8cb74",
+            "9e831e9",
+            "8f37c82",
+            "c7a5388",
+            "a9b99b3",
+            "98ae718",
+            "e13373f",
+            "4995a77",
+            "6748a09",
+            "ab81496"
+          ]
+        }
+      ]
+    }
+  }
+}

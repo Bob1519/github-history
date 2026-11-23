@@ -1,0 +1,242 @@
+[
+  {
+    "sha": "22c48a7",
+    "message": "Merge remote-tracking branch 'origin/stable'",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "2eab96a",
+    "message": "use generic bases for session (#5638)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "7b21d43",
+    "message": "configure and check `request.trusted_hosts` (#5637)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "10bdf61",
+    "message": "setting `SERVER_NAME` does not restrict routing for both `subdomain_matching` and `host_matching` (#5634)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "07c7d57",
+    "message": "update min blinker version (#5633)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "a20bcff",
+    "message": "enable secret key rotation (#5632)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "7522c4b",
+    "message": "update env file precedence (#5630)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "c62b03b",
+    "message": "fix example and tutorial compatibility and update metadata (#5627)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "ce08bc7",
+    "message": "add SESSION_COOKIE_PARTITIONED config (#5499)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "6f2014d",
+    "message": "add config and docs for limits (#5626)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "62c56e0",
+    "message": "update minimum dependencies (#5624)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "99ce7ed",
+    "message": "drop support for Python 3.8 (#5623)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "e8b91cd",
+    "message": "fix pyright type errors (#5620)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "2778b7c",
+    "message": "Merge branch 'stable'",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "9b55493",
+    "message": "Merge branch '3.0.x'",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "68150d4",
+    "message": "Fix the issue link in the Flask 3.0.1 Changelog in the send_file argu\u2026 (#5618)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "d273f87",
+    "message": "use python 3.9 to test dev versions (#5615)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "52c060f",
+    "message": "Fix typo in the changelog (#5609)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "bca1804",
+    "message": "Merge branch '3.0.x'",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "e63ead4",
+    "message": "Fix typo in the changelog",
+    "reason": "trivial change ('Fix typo in the changelog', <= 10 lines)"
+  },
+  {
+    "sha": "7e53070",
+    "message": "Merge branch '3.0.x'",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "eeb5f95",
+    "message": "Merge branch '3.0.x'",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "4e6384d",
+    "message": "Merge branch '3.0.x'",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "8a6cdf1",
+    "message": "[pre-commit.ci] pre-commit autoupdate (#5541)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "a791997",
+    "message": "Bump the github-actions group with 3 updates (#5539)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "a8956fe",
+    "message": "Add encoding parameter to open resource (#5526)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "5353f30",
+    "message": "Update waitress.rst (#5522)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "66af0e5",
+    "message": "[pre-commit.ci] pre-commit autoupdate (#5517)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "926ab92",
+    "message": "Bump the python-requirements group in /requirements with 5 updates (#5514)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "088b58d",
+    "message": "Bump the github-actions group with 2 updates (#5516)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "0ce2727",
+    "message": "[pre-commit.ci] pre-commit autoupdate (#5495)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "0d2100e",
+    "message": "Bump actions/checkout from 4.1.4 to 4.1.6 in the github-actions group (#5493)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "422e05e",
+    "message": "Bump the python-requirements group in /requirements with 3 updates (#5492)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "6d126e1",
+    "message": "Added python type annotation and return type. (#5485)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "bb16048",
+    "message": "Edited variable names in quickstart guide (#5487)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "a2f495b",
+    "message": "`SESSION_COOKIE_DOMAIN` caveat documentation (#5464)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "255c8d6",
+    "message": "Merge branch '3.0.x'",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "bea5876",
+    "message": "test with python 3.13 (#5481)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "67ed369",
+    "message": "[pre-commit.ci] pre-commit autoupdate (#5477)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "d64ecfb",
+    "message": "Bump the python-requirements group across 1 directory with 6 updates (#5476)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "fc605b5",
+    "message": "Bump the github-actions group with 2 updates (#5473)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "4f42c64",
+    "message": "Merge branch '3.0.x'",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "57add38",
+    "message": "examples/javascript: Update Documentation URL in pyproject.toml (#5475)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "11c15dd",
+    "message": "Bump the python-requirements group in /requirements with 3 updates (#5468)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "f48802a",
+    "message": "Bump the github-actions group across 1 directory with 4 updates (#5470)",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "2c7f57a",
+    "message": "Merge branch '3.0.x'",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "aee16df",
+    "message": "Merge branch '3.0.x'",
+    "reason": "merge commit (content already in branch commits)"
+  },
+  {
+    "sha": "6118224",
+    "message": "release version 3.0.3 (#5461)",
+    "reason": "merge commit (content already in branch commits)"
+  }
+]

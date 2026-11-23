@@ -1,0 +1,94 @@
+{
+  "ground_truth_recall_audit": [
+    {
+      "milestone": "Dropped support for Python 3.8 and raised the minimum dependency versions to the latest feature releases",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Added a configuration option to control whether Flask automatically answers OPTIONS requests",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Flask.open_resource, open_instance_resource and Blueprint.open_resource take an encoding parameter for text mode, defaulting to utf-8",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Request.max_content_length can be customized per request instead of only through the MAX_CONTENT_LENGTH config, and new MAX_FORM_MEMORY_SIZE and MAX_FORM_PARTS configs were added",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Added support for the Partitioned cookie attribute through the SESSION_COOKIE_PARTITIONED config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Changed .env loading so that -e path takes precedence over the default .env and .flaskenv files",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Added secret key rotation with the SECRET_KEY_FALLBACKS config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Fixed how host_matching=True and subdomain_matching=False interact with SERVER_NAME",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Request.trusted_hosts is now checked during routing and can be set through the TRUSTED_HOSTS config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    }
+  ],
+  "narrative_precision_audit": [
+    {
+      "narrative_claim": "The journey begins with a series of updates to the GitHub Actions workflows",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "This commitment to keeping CI/CD tools up-to-date is crucial for ensuring compatibility with the latest features and security patches",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "A significant theme in the recent commits is the ongoing effort to manage and upgrade development dependencies",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "The commitment to dependency management continued with the merge commit which consolidated updates from the 3.0.x branch",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "The evolution of the codebase also reflects a commitment to improving code quality and type safety",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "Overall, the recent commits to the Flask repository illustrate a robust and proactive approach to software development",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    }
+  ],
+  "counts": {
+    "total_gt_milestones": 9,
+    "covered_milestones": 0,
+    "partially_covered_milestones": 0,
+    "missed_milestones": 9,
+    "total_narrative_claims": 6,
+    "matched_narrative_claims": 0
+  },
+  "metrics": {
+    "end_to_end_recall": 0.0,
+    "end_to_end_precision": 0.0,
+    "pipeline_f1_score": 0.0
+  }
+}

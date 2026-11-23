@@ -1,0 +1,119 @@
+{
+  "ground_truth_recall_audit": [
+    {
+      "milestone": "Dropped support for Python 3.8 and raised the minimum dependency versions",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Added a configuration option to control whether Flask automatically answers OPTIONS requests",
+      "status": "covered",
+      "matching_narrative_excerpt": "the addition of configuration options to control automatic OPTIONS responses"
+    },
+    {
+      "milestone": "Flask.open_resource, open_instance_resource and Blueprint.open_resource take an encoding parameter for text mode",
+      "status": "covered",
+      "matching_narrative_excerpt": "the addition of an `encoding` parameter to the `open_resource` method"
+    },
+    {
+      "milestone": "Request.max_content_length can be customized per request instead of only through the MAX_CONTENT_LENGTH config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "new MAX_FORM_MEMORY_SIZE and MAX_FORM_PARTS configs were added",
+      "status": "covered",
+      "matching_narrative_excerpt": "new configuration options, such as `MAX_FORM_MEMORY_SIZE` and `MAX_FORM_PARTS`"
+    },
+    {
+      "milestone": "Added support for the Partitioned cookie attribute through the SESSION_COOKIE_PARTITIONED config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Changed .env loading so that `-e path` takes precedence over the default .env and .flaskenv files",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    },
+    {
+      "milestone": "Added secret key rotation with the SECRET_KEY_FALLBACKS config",
+      "status": "covered",
+      "matching_narrative_excerpt": "the introduction of secret key rotation support"
+    },
+    {
+      "milestone": "Fixed how host_matching=True and subdomain_matching=False interact with SERVER_NAME",
+      "status": "covered",
+      "matching_narrative_excerpt": "the fix for subdomain matching behavior"
+    },
+    {
+      "milestone": "Request.trusted_hosts is now checked during routing and can be set through the TRUSTED_HOSTS config",
+      "status": "missed",
+      "matching_narrative_excerpt": null
+    }
+  ],
+  "narrative_precision_audit": [
+    {
+      "narrative_claim": "the addition of configuration options to control automatic OPTIONS responses",
+      "matches_ground_truth": true,
+      "matched_milestone": "Added a configuration option to control whether Flask automatically answers OPTIONS requests"
+    },
+    {
+      "narrative_claim": "the addition of an `encoding` parameter to the `open_resource` method",
+      "matches_ground_truth": true,
+      "matched_milestone": "Flask.open_resource, open_instance_resource and Blueprint.open_resource take an encoding parameter for text mode"
+    },
+    {
+      "narrative_claim": "new configuration options, such as `MAX_FORM_MEMORY_SIZE` and `MAX_FORM_PARTS`",
+      "matches_ground_truth": true,
+      "matched_milestone": "new MAX_FORM_MEMORY_SIZE and MAX_FORM_PARTS configs were added"
+    },
+    {
+      "narrative_claim": "the introduction of secret key rotation support",
+      "matches_ground_truth": true,
+      "matched_milestone": "Added secret key rotation with the SECRET_KEY_FALLBACKS config"
+    },
+    {
+      "narrative_claim": "the fix for subdomain matching behavior",
+      "matches_ground_truth": true,
+      "matched_milestone": "Fixed how host_matching=True and subdomain_matching=False interact with SERVER_NAME"
+    },
+    {
+      "narrative_claim": "removal of the installation and contribution sections from the README",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "fix for mypy type checking issues in the wrappers.py file",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "resolution of type errors in multiple files",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "implementation of building documentation from scratch for each test",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    },
+    {
+      "narrative_claim": "updates to GitHub Actions workflows",
+      "matches_ground_truth": false,
+      "matched_milestone": "none - noise/unverified"
+    }
+  ],
+  "counts": {
+    "total_gt_milestones": 10,
+    "covered_milestones": 5,
+    "partially_covered_milestones": 0,
+    "missed_milestones": 5,
+    "total_narrative_claims": 10,
+    "matched_narrative_claims": 5
+  },
+  "metrics": {
+    "end_to_end_recall": 0.25,
+    "end_to_end_precision": 0.5,
+    "pipeline_f1_score": 0.333
+  }
+}

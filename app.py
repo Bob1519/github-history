@@ -15,7 +15,7 @@ from filtering.noise_filter import filter_commits
 from pipeline.cp4_pipeline import CP4Pipeline, RetrievalConfig
 from llm_api.llm_client import LLMClient
 from ui.sidebar import render_sidebar
-from ui.tab_commits import render_commits_tab
+from ui.tab_commits import render_commits_tab, default_oldest
 from ui.tab_retrieval import render_retrieval_tab, load_embedder, get_queries, get_prompt_path
 from ui.tab_summary import render_summary_tab
 from ui.tab_eval import render_eval_tab
@@ -104,7 +104,7 @@ if config["run_all_btn"]:
                 # 2. Initialize pipeline (CP4Pipeline handles commit fetching, parsing, and filtering internally)
                 embed_fn = load_embedder("bge-m3")
                 newest_sha = st.session_state.get("selected_newest_sha", all_shas[0])
-                oldest_sha = st.session_state.get("selected_oldest_sha", all_shas[-1])
+                oldest_sha = st.session_state.get("selected_oldest_sha", default_oldest(all_shas))
                 pipe = CP4Pipeline(api, embed_fn, newest_sha, oldest_sha, embedder_name="bge-m3")
 
                 # 3. Configure retrieval

@@ -1,3 +1,4 @@
+import json
 import os
 import re
 from pathlib import Path
@@ -11,14 +12,25 @@ CACHE_DIR = Path("github_cache")
 
 
 def discover_cached_repos() -> List[str]:
-    """Scan github_cache/ for any *_shas.json files (both full and partial lists)."""
+    """Scan github_cache/ for any *_shas.json files (both full and partial lists).
+
+    Cache files are keyed by repo name only, so the owner comes from _repo_owners.json
+    (written by GitHubAPI); repos cached before that file existed fall back to repo/repo.
+    """
     if not CACHE_DIR.exists():
         return []
+    owners = {}
+    registry = CACHE_DIR / "_repo_owners.json"
+    if registry.exists():
+        try:
+            owners = json.loads(registry.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            owners = {}
     cached = set()
     # Matches both repo_all_shas.json and repo_100_shas.json
     for p in CACHE_DIR.glob("*_shas.json"):
         repo_name = re.sub(r"_(all|\d+)_shas\.json$", "", p.name)
-        cached.add(f"{repo_name}/{repo_name}")
+        cached.add(f"{owners.get(repo_name, repo_name)}/{repo_name}")
     return sorted(list(cached))
 
 
